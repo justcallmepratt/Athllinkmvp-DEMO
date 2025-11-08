@@ -7,6 +7,7 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Badge } from './ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import athlinkLogo from 'figma:asset/2dea44558ee75ccc34db0ab7f1dff6684b053f54.png';
 
 interface AthleteAppProps {
   profile: any;

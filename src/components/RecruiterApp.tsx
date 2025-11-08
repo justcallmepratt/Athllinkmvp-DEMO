@@ -8,6 +8,7 @@ import { Badge } from './ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { DetailedAIReport } from './DetailedAIReport';
 import { DetailedAIReportRefactored } from './ai-reports/DetailedAIReportRefactored';
+import athlinkLogo from 'figma:asset/2dea44558ee75ccc34db0ab7f1dff6684b053f54.png';
 
 interface RecruiterAppProps {
   onBack: () => void;
@@ -731,7 +732,10 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
       {/* Sidebar */}
       <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-200">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-[#2196F3] mb-1">Athlink</h2>
+          <div className="flex items-center gap-3 mb-2">
+            <img src={athlinkLogo} alt="Athlink" className="w-10 h-10 object-contain" />
+            <h2 className="text-[#2196F3]">Athlink</h2>
+          </div>
           <p className="text-gray-600 text-sm">Recruiter Portal</p>
         </div>
         
