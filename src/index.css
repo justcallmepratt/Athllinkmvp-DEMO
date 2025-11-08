@@ -126,7 +126,6 @@
     --color-purple-50: oklch(.977 .014 308.299);
     --color-purple-100: oklch(.946 .033 307.174);
     --color-purple-200: oklch(.902 .063 306.703);
-    --color-purple-300: oklch(.827 .119 306.383);
     --color-purple-600: oklch(.558 .288 302.321);
     --color-purple-700: oklch(.496 .265 301.924);
     --color-purple-900: oklch(.381 .176 304.987);
@@ -1429,10 +1428,6 @@
     border-color: #ff5722;
   }
 
-  .border-blue-100 {
-    border-color: var(--color-blue-100);
-  }
-
   .border-blue-200 {
     border-color: var(--color-blue-200);
   }
@@ -1561,10 +1556,6 @@
 
   .bg-\[\#00BCD4\]\/20 {
     background-color: oklab(72.9115% -.108607 -.0647861 / .2);
-  }
-
-  .bg-\[\#8BC34A\]\/10 {
-    background-color: oklab(75.3596% -.105593 .123624 / .1);
   }
 
   .bg-\[\#2196F3\] {
@@ -2027,6 +2018,11 @@
 
   .to-\[\#00ACC1\] {
     --tw-gradient-to: #00acc1;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-\[\#00BCD4\] {
+    --tw-gradient-to: #00bcd4;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -2947,12 +2943,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:border-blue-300:hover {
-      border-color: var(--color-blue-300);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:border-gray-300:hover {
       border-color: var(--color-gray-300);
     }
@@ -2967,12 +2957,6 @@
   @media (hover: hover) {
     .hover\:border-purple-200:hover {
       border-color: var(--color-purple-200);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:border-purple-300:hover {
-      border-color: var(--color-purple-300);
     }
   }
 

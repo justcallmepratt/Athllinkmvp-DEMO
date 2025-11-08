@@ -335,7 +335,7 @@ export default function App() {
         <div className="bg-white py-20" id="features">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0 px-4 py-2 mb-4">
+              <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0 px-4 py-2 mb-4">
                 <Sparkles className="w-4 h-4 mr-2" />
                 Cutting-Edge Technology
               </Badge>
@@ -347,9 +347,9 @@ export default function App() {
 
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               {/* Computer Vision */}
-              <Card className="p-8 rounded-2xl shadow-xl border-2 border-purple-100 hover:border-purple-300 transition-all">
+              <Card className="p-8 rounded-2xl shadow-xl border-2 border-[#00BCD4]/20 hover:border-[#00BCD4] transition-all">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-xl">
+                  <div className="bg-gradient-to-br from-[#00BCD4] to-[#00ACC1] p-3 rounded-xl">
                     <Eye className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -361,38 +361,38 @@ export default function App() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#00BCD4] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">Frame-by-frame movement analysis</p>
                       <p className="text-xs text-gray-500">AI evaluates technique, speed, and agility in real-time</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#00BCD4] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">Automatic stat calculation</p>
                       <p className="text-xs text-gray-500">Extracts performance metrics from game footage</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#00BCD4] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">Fraud detection</p>
                       <p className="text-xs text-gray-500">Identifies manipulated or misleading videos</p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 p-4 bg-purple-50 rounded-xl">
-                  <p className="text-xs text-purple-900">
+                <div className="mt-6 p-4 bg-[#00BCD4]/10 rounded-xl border border-[#00BCD4]/20">
+                  <p className="text-xs text-gray-700">
                     <strong>Trained on 500K+ athlete videos</strong> across all major sports
                   </p>
                 </div>
               </Card>
 
               {/* AR Measurements */}
-              <Card className="p-8 rounded-2xl shadow-xl border-2 border-blue-100 hover:border-blue-300 transition-all">
+              <Card className="p-8 rounded-2xl shadow-xl border-2 border-[#2196F3]/20 hover:border-[#2196F3] transition-all">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="bg-gradient-to-br from-blue-600 to-cyan-600 p-3 rounded-xl">
+                  <div className="bg-gradient-to-br from-[#2196F3] to-[#1976D2] p-3 rounded-xl">
                     <Scan className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -404,29 +404,29 @@ export default function App() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#2196F3] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">±0.5" accuracy guarantee</p>
                       <p className="text-xs text-gray-500">Height, wingspan, standing reach verified to NCAA standards</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#2196F3] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">3D body mapping</p>
                       <p className="text-xs text-gray-500">Creates comprehensive physical profile using LiDAR technology</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#2196F3] flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm text-gray-800">Instant verification</p>
                       <p className="text-xs text-gray-500">No need for expensive combine testing or in-person measurements</p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 p-4 bg-blue-50 rounded-xl">
-                  <p className="text-xs text-blue-900">
+                <div className="mt-6 p-4 bg-[#2196F3]/10 rounded-xl border border-[#2196F3]/20">
+                  <p className="text-xs text-gray-700">
                     <strong>Works on any smartphone</strong> with AR capability (iOS 12+ / Android 9+)
                   </p>
                 </div>
@@ -434,10 +434,10 @@ export default function App() {
             </div>
 
             {/* SportsRadar Integration */}
-            <Card className="p-8 rounded-2xl shadow-xl bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-blue-200">
+            <Card className="p-8 rounded-2xl shadow-xl bg-gradient-to-br from-[#00BCD4]/10 to-[#2196F3]/10 border-2 border-[#2196F3]/30">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="bg-gradient-to-br from-blue-600 to-cyan-600 p-3 rounded-xl">
+                  <div className="bg-gradient-to-br from-[#2196F3] to-[#00BCD4] p-3 rounded-xl">
                     <BarChart className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -447,33 +447,33 @@ export default function App() {
                     </p>
                   </div>
                 </div>
-                <Badge className="bg-blue-600 text-white">
+                <Badge className="bg-gradient-to-r from-[#2196F3] to-[#00BCD4] text-white border-0">
                   <Shield className="w-3 h-3 mr-1" />
                   Verified Partner
                 </Badge>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white p-4 rounded-xl">
+                <div className="bg-white p-4 rounded-xl border border-[#2196F3]/20">
                   <div className="text-3xl text-[#2196F3] mb-2">100%</div>
                   <p className="text-sm text-gray-700">Stat Verification Rate</p>
                   <p className="text-xs text-gray-500 mt-1">All stats cross-referenced with SportsRadar API database</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl">
-                  <div className="text-3xl text-[#2196F3] mb-2">35K+</div>
+                <div className="bg-white p-4 rounded-xl border border-[#00BCD4]/20">
+                  <div className="text-3xl text-[#00BCD4] mb-2">35K+</div>
                   <p className="text-sm text-gray-700">Data Sources</p>
                   <p className="text-xs text-gray-500 mt-1">Connected to SportsRadar's global sports network</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl">
+                <div className="bg-white p-4 rounded-xl border border-[#2196F3]/20">
                   <div className="text-3xl text-[#2196F3] mb-2">Real-time</div>
                   <p className="text-sm text-gray-700">Stat Updates</p>
                   <p className="text-xs text-gray-500 mt-1">Automatic sync with SportsRadar live game data</p>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-white/70 rounded-xl border border-blue-200">
+              <div className="mt-6 p-4 bg-white/70 rounded-xl border border-[#2196F3]/30">
                 <div className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Shield className="w-5 h-5 text-[#2196F3] flex-shrink-0 mt-0.5" />
                   <p className="text-xs text-gray-700 leading-relaxed">
                     <strong>Why it matters:</strong> Coaches can trust that all statistics are verified by SportsRadar, the world's leading sports data and content provider. No more inflated stats or unverified claims – every number is backed by official game records and real-time API data from 35,000+ global sources.
                   </p>
@@ -488,6 +488,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <Badge className="bg-[#00BCD4]/20 text-[#00BCD4] border-0 px-4 py-2 mb-4">
+                <Zap className="w-4 h-4 mr-2" />
                 Powerful Features
               </Badge>
               <h2 className="text-[#2196F3] mb-4">Everything You Need to Succeed</h2>
@@ -528,8 +529,8 @@ export default function App() {
               </Card>
 
               <Card className="p-6 rounded-2xl hover:shadow-xl transition-shadow">
-                <div className="bg-[#8BC34A]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-[#8BC34A]" />
+                <div className="bg-[#00BCD4]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-[#00BCD4]" />
                 </div>
                 <h4 className="text-[#2196F3] mb-2">NCAA Compliance</h4>
                 <p className="text-sm text-gray-600">
@@ -568,8 +569,8 @@ export default function App() {
               </Card>
 
               <Card className="p-6 rounded-2xl hover:shadow-xl transition-shadow">
-                <div className="bg-[#8BC34A]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-[#8BC34A]" />
+                <div className="bg-[#2196F3]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-[#2196F3]" />
                 </div>
                 <h4 className="text-[#2196F3] mb-2">Instant Notifications</h4>
                 <p className="text-sm text-gray-600">
