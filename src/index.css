@@ -4571,6 +4571,18 @@
 
 html {
   font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+
+  .fixed {
+    transform: translateZ(0);
+  }
 }
 
 @property --tw-translate-x {

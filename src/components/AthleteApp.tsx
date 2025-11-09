@@ -454,7 +454,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto">
+      <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto" style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}>
         <div className="p-6 border-b border-gray-100">
           <button onClick={onBack} className="flex items-center">
             <img src={athlinkLogo} alt="Athlink" className="w-10 h-10 object-contain" />
