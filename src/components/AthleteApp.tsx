@@ -451,11 +451,9 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
       {/* Desktop Sidebar */}
       <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto">
         <div className="p-6 border-b border-gray-100">
-          <div className="flex items-center gap-3 mb-1">
-            <img src={athlinkLogo} alt="Athlink" className="w-8 h-8 object-contain" />
-            <h2 className="text-gray-900">Athlink</h2>
-          </div>
-          <p className="text-gray-500 text-xs">Athlete Portal</p>
+          <button onClick={onBack} className="flex items-center">
+            <img src={athlinkLogo} alt="Athlink" className="w-10 h-10 object-contain" />
+          </button>
         </div>
         
         <nav className="flex-1 px-4 py-6">

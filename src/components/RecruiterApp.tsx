@@ -826,11 +826,9 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
       {/* Sidebar */}
       <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto">
         <div className="p-6 border-b border-gray-100">
-          <div className="flex items-center gap-3 mb-1">
-            <img src={athlinkLogo} alt="Athlink" className="w-8 h-8 object-contain" />
-            <h2 className="text-gray-900">Athlink</h2>
-          </div>
-          <p className="text-gray-500 text-xs">Recruiter Portal</p>
+          <button onClick={onBack} className="flex items-center">
+            <img src={athlinkLogo} alt="Athlink" className="w-10 h-10 object-contain" />
+          </button>
         </div>
         
         <nav className="flex-1 px-4 py-6">
@@ -992,36 +990,36 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
         {/* Dashboard Tab */}
         {activeTab === 'dashboard' && (
           <div className="p-6 max-w-[1600px] mx-auto">
-            <h1 className="text-[#2196F3] mb-8">Dashboard</h1>
+            <h1 className="text-gray-900 mb-8">Dashboard</h1>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <Card className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
-                <p className="text-gray-600 text-sm mb-1">Athletes Viewed</p>
-                <p className="text-3xl text-[#2196F3] mb-2">234</p>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <p className="text-gray-500 text-sm mb-1">Athletes Viewed</p>
+                <p className="text-3xl text-gray-900 mb-2">234</p>
                 <p className="text-xs text-green-600">+12% from last month</p>
               </Card>
-              <Card className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50">
-                <p className="text-gray-600 text-sm mb-1">Matched</p>
-                <p className="text-3xl text-[#2196F3] mb-2">67</p>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <p className="text-gray-500 text-sm mb-1">Matched</p>
+                <p className="text-3xl text-gray-900 mb-2">67</p>
                 <p className="text-xs text-green-600">+23% from last month</p>
               </Card>
-              <Card className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
-                <p className="text-gray-600 text-sm mb-1">Messages Sent</p>
-                <p className="text-3xl text-[#2196F3] mb-2">156</p>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <p className="text-gray-500 text-sm mb-1">Messages Sent</p>
+                <p className="text-3xl text-gray-900 mb-2">156</p>
                 <p className="text-xs text-green-600">+8% from last month</p>
               </Card>
-              <Card className="p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100">
-                <p className="text-gray-600 text-sm mb-1">Response Rate</p>
-                <p className="text-3xl text-[#FF5722] mb-2">78%</p>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <p className="text-gray-500 text-sm mb-1">Response Rate</p>
+                <p className="text-3xl text-gray-900 mb-2">78%</p>
                 <p className="text-xs text-green-600">+5% from last month</p>
               </Card>
             </div>
 
             {/* Quick Stats */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <Card className="p-6 rounded-2xl">
-                <h3 className="text-[#2196F3] mb-4">Top Countries</h3>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <h3 className="text-gray-900 mb-4">Top Countries</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Brazil</span>
@@ -1062,8 +1060,8 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 </div>
               </Card>
 
-              <Card className="p-6 rounded-2xl">
-                <h3 className="text-[#2196F3] mb-4">Sport Distribution</h3>
+              <Card className="p-6 rounded-lg bg-white border border-gray-100">
+                <h3 className="text-gray-900 mb-4">Sport Distribution</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Soccer</span>
@@ -1106,8 +1104,8 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
             </div>
 
             {/* Filters */}
-            <Card className="p-6 rounded-2xl mb-8">
-              <h3 className="text-[#2196F3] mb-4">Search Filters</h3>
+            <Card className="p-6 rounded-lg bg-white border border-gray-100 mb-8">
+              <h3 className="text-gray-900 mb-4">Search Filters</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <Select value={filters.sport} onValueChange={(value) => setFilters({...filters, sport: value})}>
                   <SelectTrigger className="rounded-xl">
@@ -1158,7 +1156,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
             {/* Recent Athletes */}
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-[#2196F3]">Recent Athletes</h3>
+                <h3 className="text-gray-900">Recent Athletes</h3>
                 <div className="flex gap-2">
                   <Badge variant="outline" className="cursor-pointer hover:bg-gray-100">
                     All Sports
@@ -1172,7 +1170,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 {mockAthletes.map(athlete => (
                   <Card 
                     key={athlete.id} 
-                    className="p-0 overflow-hidden rounded-2xl hover:shadow-xl transition-shadow cursor-pointer group"
+                    className="p-0 overflow-hidden rounded-lg hover:shadow-md transition-shadow cursor-pointer group border border-gray-100"
                     onClick={() => setSelectedAthlete(athlete)}
                   >
                     <div className="relative h-48">
@@ -1180,10 +1178,10 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
                         <Play className="w-12 h-12 text-white" />
                       </div>
-                      <Badge className="absolute top-3 right-3 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0">
+                      <Badge className="absolute top-3 right-3 bg-[#2196F3] text-white border-0">
                         GPA {athlete.gpa}
                       </Badge>
-                      <Badge className="absolute top-3 left-3 bg-white/90 text-[#2196F3]">
+                      <Badge className="absolute top-3 left-3 bg-white/95 text-gray-900 border border-gray-200">
                         {athlete.matchRate}% Match
                       </Badge>
                       <div className="absolute bottom-3 left-3 flex gap-1">
@@ -1199,10 +1197,10 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                           <AvatarFallback>{athlete.name[0]}</AvatarFallback>
                         </Avatar>
                         <div className="flex-1">
-                          <p className="text-[#2196F3] flex items-center gap-1">
+                          <p className="text-gray-900 flex items-center gap-1">
                             {athlete.name}
                             {athlete.aiVerified && athlete.arVerified && (
-                              <CheckCircle2 className="w-4 h-4 text-[#00BCD4]" />
+                              <CheckCircle2 className="w-4 h-4 text-[#2196F3]" />
                             )}
                           </p>
                           <p className="text-sm text-gray-500">{athlete.sport} • {athlete.position}</p>
@@ -1234,11 +1232,11 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       </div>
                       
                       <div className="flex gap-2">
-                        <Button className="flex-1 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl text-sm h-9">
+                        <Button className="flex-1 bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-lg text-sm h-9">
                           <Heart className="w-3 h-3 mr-1" />
                           Match
                         </Button>
-                        <Button variant="outline" className="flex-1 rounded-xl text-sm h-9">
+                        <Button variant="outline" className="flex-1 rounded-lg text-sm h-9 border-gray-200 hover:border-[#2196F3] hover:text-[#2196F3]">
                           <Send className="w-3 h-3 mr-1" />
                           Message
                         </Button>
@@ -1356,10 +1354,10 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
           <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h1 className="text-[#2196F3] mb-2">Saved Athletes</h1>
+                <h1 className="text-gray-900 mb-2">Saved Athletes</h1>
                 <p className="text-gray-600">{savedAthletes.length} athletes in your favorites</p>
               </div>
-              <Button className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl">
+              <Button className="bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-lg">
                 <FileText className="w-4 h-4 mr-2" />
                 Export List
               </Button>
@@ -1369,7 +1367,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
               {mockAthletes
                 .filter(athlete => savedAthletes.includes(athlete.id))
                 .map(athlete => (
-                  <Card key={athlete.id} className="p-6 rounded-2xl hover:shadow-xl transition-shadow">
+                  <Card key={athlete.id} className="p-6 rounded-lg hover:shadow-md transition-shadow bg-white border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <Avatar className="w-16 h-16">
                         <AvatarImage src={athlete.avatar} />
@@ -1395,39 +1393,39 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       </div>
                     </div>
 
-                    <h3 className="text-[#2196F3] mb-1">{athlete.name}</h3>
+                    <h3 className="text-gray-900 mb-1">{athlete.name}</h3>
                     <p className="text-sm text-gray-600 mb-2">{athlete.country} • Class of {athlete.yearOfGraduation}</p>
                     
                     <div className="flex items-center gap-2 mb-4">
-                      <Badge className="bg-[#FF5722] text-white">{athlete.sport}</Badge>
-                      <Badge variant="outline">{athlete.position}</Badge>
+                      <Badge className="bg-[#2196F3] text-white">{athlete.sport}</Badge>
+                      <Badge variant="outline" className="border-gray-200">{athlete.position}</Badge>
                     </div>
 
                     <div className="space-y-2 mb-4">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Match Rate</span>
-                        <span className="text-[#2196F3] font-semibold">{athlete.matchRate}%</span>
+                        <span className="text-gray-900">{athlete.matchRate}%</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">AI Score</span>
-                        <span className="text-[#FF5722] font-semibold">{athlete.aiScore}/100</span>
+                        <span className="text-gray-900">{athlete.aiScore}/100</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">GPA</span>
-                        <span className="text-[#2196F3] font-semibold">{athlete.gpa}</span>
+                        <span className="text-gray-900">{athlete.gpa}</span>
                       </div>
                     </div>
 
                     <div className="flex gap-2">
                       <Button 
-                        className="flex-1 bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-xl"
+                        className="flex-1 bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-lg"
                         onClick={() => setSelectedAthlete(athlete)}
                       >
                         View Profile
                       </Button>
                       <Button 
                         variant="outline" 
-                        className="flex-1 rounded-xl"
+                        className="flex-1 rounded-lg border-gray-200 hover:border-[#2196F3] hover:text-[#2196F3]"
                         onClick={() => setActiveTab('messages')}
                       >
                         Message
@@ -1458,7 +1456,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
         {activeTab === 'compare' && (
           <div className="p-6 max-w-[1600px] mx-auto">
             <div className="mb-8">
-              <h1 className="text-[#2196F3] mb-2">Compare Athletes</h1>
+              <h1 className="text-gray-900 mb-2">Compare Athletes</h1>
               <p className="text-gray-600">Side-by-side comparison (select up to 3 athletes)</p>
             </div>
 

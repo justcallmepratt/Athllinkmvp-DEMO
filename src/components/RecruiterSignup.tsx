@@ -33,7 +33,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
   };
 
   const basePrice = 3000;
-  const transferPortalPrice = 500;
+  const transferPortalPrice = 125;
   const totalPrice = basePrice + (transferPortalAddon ? transferPortalPrice : 0);
 
   return (
@@ -216,7 +216,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
                       </div>
                       
                       <div className="flex items-baseline mt-3">
-                        <span className="text-2xl text-[#FF5722]">+$500</span>
+                        <span className="text-2xl text-[#FF5722]">+$125</span>
                         <span className="text-gray-600 ml-2 text-sm">/month</span>
                       </div>
                     </div>
@@ -452,7 +452,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
                 {transferPortalAddon && (
                   <div className="flex justify-between">
                     <span className="text-gray-600">AI Team Fit Analysis Add-on</span>
-                    <span className="text-gray-900">$500/month</span>
+                    <span className="text-gray-900">$125/month</span>
                   </div>
                 )}
                 <div className="border-t border-gray-200 pt-2 mt-2">
