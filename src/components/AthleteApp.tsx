@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, Upload, MessageCircle, User, ArrowLeft, Plus, Play, Edit, School, Eye, TrendingUp, Award, DollarSign, Calendar, BookOpen, Activity, Trophy, Target, Dumbbell, GraduationCap, FileText, Clock, MapPin, Video, CheckCircle2, Star, BarChart3, Zap, TrendingDown, Globe, Linkedin, Share2, ExternalLink, Download, Bell, Settings, Search, Filter, Briefcase, Users, LineChart, PieChart, ArrowUpRight, Check, AlertCircle, FileCheck, Package, Lightbulb, PlayCircle, Info, HelpCircle, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
@@ -7,6 +7,7 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Badge } from './ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import athlinkLogo from 'figma:asset/2dea44558ee75ccc34db0ab7f1dff6684b053f54.png';
 
 interface AthleteAppProps {
@@ -433,44 +434,209 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
   const [uploadStep, setUploadStep] = useState<'select' | 'details'>('select');
   const [videoCaption, setVideoCaption] = useState('');
   const [preferredLanguage, setPreferredLanguage] = useState('English');
+  const [showAdPopup, setShowAdPopup] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  // DISABLED: Show ad popup when switching pages (but not on initial load)
+  // useEffect(() => {
+  //   if (isInitialLoad) {
+  //     setIsInitialLoad(false);
+  //     return;
+  //   }
+  //   setShowAdPopup(true);
+  // }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      {/* Pricing Banner */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-2 px-4 sticky top-0 z-20">
-        <div className="max-w-md mx-auto text-center">
-          <p className="text-xs">
-            <Sparkles className="w-3 h-3 inline mr-1" />
-            <strong>First 3 months FREE!</strong> Then only $10/month for unlimited uploads, messaging & all features
-          </p>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Desktop Sidebar */}
+      <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto">
+        <div className="p-6 border-b border-gray-100">
+          <div className="flex items-center gap-3 mb-1">
+            <img src={athlinkLogo} alt="Athlink" className="w-8 h-8 object-contain" />
+            <h2 className="text-gray-900">Athlink</h2>
+          </div>
+          <p className="text-gray-500 text-xs">Athlete Portal</p>
         </div>
-      </div>
-
-      {/* Header */}
-      <div className="bg-[#2196F3] text-white p-4 sticky top-8 z-10">
-        <div className="max-w-md mx-auto flex items-center">
-          <button onClick={onBack} className="mr-4">
-            <ArrowLeft className="w-6 h-6" />
+        
+        <nav className="flex-1 px-4 py-6">
+          <button
+            onClick={() => setActiveTab('home')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'home' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <Home className="w-4 h-4" />
+            <span className="text-sm">Dashboard</span>
           </button>
-          <h2 className="text-white flex-1">
-            {activeTab === 'home' && 'Dashboard'}
-            {activeTab === 'upload' && 'Upload Highlight'}
-            {activeTab === 'messages' && 'Messages'}
-            {activeTab === 'profile' && 'Profile'}
-            {activeTab === 'scholarships' && 'Scholarships'}
-            {activeTab === 'training' && 'Training Programs'}
-            {activeTab === 'visits' && 'Campus Visits'}
-            {activeTab === 'nil' && 'NIL Opportunities'}
-            {activeTab === 'academics' && 'Academic Progress'}
-            {activeTab === 'sponsors' && 'Local Sponsors'}
-            {activeTab === 'tutorials' && 'Video Tutorials'}
-            {activeTab === 'resources' && 'Resources'}
-            {activeTab === 'camps' && 'Summer Camps'}
-          </h2>
-        </div>
+          <button
+            onClick={() => {
+              setActiveTab('upload');
+              setUploadStep('select');
+            }}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'upload' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <Upload className="w-4 h-4" />
+            <span className="text-sm">Upload</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('messages')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'messages' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span className="text-sm">Messages</span>
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full ml-auto"></div>
+          </button>
+          <button
+            onClick={() => setActiveTab('scholarships')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'scholarships' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <Award className="w-4 h-4" />
+            <span className="text-sm">Scholarships</span>
+            {mockScholarshipOffers.length > 0 && (
+              <span className={`ml-auto text-xs px-2 py-0.5 rounded-full ${activeTab === 'scholarships' ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-700'}`}>{mockScholarshipOffers.length}</span>
+            )}
+          </button>
+          <button
+            onClick={() => setActiveTab('training')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'training' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <Dumbbell className="w-4 h-4" />
+            <span className="text-sm">Training</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('nil')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'nil' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <DollarSign className="w-4 h-4" />
+            <span className="text-sm">NIL Deals</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('academics')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'academics' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <GraduationCap className="w-4 h-4" />
+            <span className="text-sm">Academics</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('visits')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'visits' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <MapPin className="w-4 h-4" />
+            <span className="text-sm">Campus Visits</span>
+          </button>
+          
+          <div className="my-6 border-t border-gray-100"></div>
+          
+          <button
+            onClick={() => setActiveTab('tutorials')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'tutorials' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <PlayCircle className="w-4 h-4" />
+            <span className="text-sm">Tutorials</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('camps')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'camps' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <Trophy className="w-4 h-4" />
+            <span className="text-sm">Summer Camps</span>
+          </button>
+          
+          <div className="my-6 border-t border-gray-100"></div>
+          
+          <button
+            onClick={() => setActiveTab('profile')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'profile' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <User className="w-4 h-4" />
+            <span className="text-sm">Profile</span>
+          </button>
+        </nav>
+
+        <button onClick={onBack} className="p-6 text-gray-500 hover:text-gray-900 flex items-center gap-2 border-t border-gray-100 text-sm">
+          <ArrowLeft className="w-5 h-5" />
+          Back to Selection
+        </button>
       </div>
 
-      <div className="max-w-md mx-auto">
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto md:ml-64 pb-20 md:pb-0">
+        {/* Pricing Banner */}
+        <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-2 px-4 sticky top-0 z-20">
+          <div className="max-w-[1600px] mx-auto text-center">
+            <p className="text-xs">
+              <Sparkles className="w-3 h-3 inline mr-1" />
+              <strong>First 3 months FREE!</strong> Then only $10/month for unlimited uploads, messaging & all features
+            </p>
+          </div>
+        </div>
+
+        {/* Mobile Header */}
+        <div className="md:hidden bg-[#2196F3] text-white p-4 sticky top-8 z-10">
+          <div className="flex items-center">
+            <button onClick={onBack} className="mr-4">
+              <ArrowLeft className="w-6 h-6" />
+            </button>
+            <h2 className="text-white flex-1">
+              {activeTab === 'home' && 'Dashboard'}
+              {activeTab === 'upload' && 'Upload Highlight'}
+              {activeTab === 'messages' && 'Messages'}
+              {activeTab === 'profile' && 'Profile'}
+              {activeTab === 'scholarships' && 'Scholarships'}
+              {activeTab === 'training' && 'Training Programs'}
+              {activeTab === 'visits' && 'Campus Visits'}
+              {activeTab === 'nil' && 'NIL Opportunities'}
+              {activeTab === 'academics' && 'Academic Progress'}
+              {activeTab === 'sponsors' && 'Local Sponsors'}
+              {activeTab === 'tutorials' && 'Video Tutorials'}
+              {activeTab === 'resources' && 'Resources'}
+              {activeTab === 'camps' && 'Summer Camps'}
+            </h2>
+          </div>
+        </div>
+
+        {/* Desktop Header */}
+        <div className="hidden md:block bg-white border-b border-gray-100 sticky top-8 z-10">
+          <div className="max-w-[1600px] mx-auto px-8 py-4">
+            <h2 className="text-gray-900">
+              {activeTab === 'home' && 'Dashboard'}
+              {activeTab === 'upload' && 'Upload Highlight'}
+              {activeTab === 'messages' && 'Messages'}
+              {activeTab === 'profile' && 'Profile'}
+              {activeTab === 'scholarships' && 'Scholarships'}
+              {activeTab === 'training' && 'Training Programs'}
+              {activeTab === 'visits' && 'Campus Visits'}
+              {activeTab === 'nil' && 'NIL Opportunities'}
+              {activeTab === 'academics' && 'Academic Progress'}
+              {activeTab === 'sponsors' && 'Local Sponsors'}
+              {activeTab === 'tutorials' && 'Video Tutorials'}
+              {activeTab === 'resources' && 'Resources'}
+              {activeTab === 'camps' && 'Summer Camps'}
+            </h2>
+          </div>
+        </div>
+
+      <div className="max-w-[1600px] mx-auto p-4 md:p-6">
         {/* Home Tab */}
         {activeTab === 'home' && (
           <div className="p-4 space-y-6">
@@ -489,16 +655,16 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
               </div>
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/20">
                 <div>
-                  <p className="text-2xl text-[#FF5722]">{mockVideos.length}</p>
+                  <p className="text-2xl text-white">{mockVideos.length}</p>
                   <p className="text-sm text-gray-100">Videos</p>
                 </div>
                 <div>
-                  <p className="text-2xl text-[#FF5722]">{mockMatches.length}</p>
+                  <p className="text-2xl text-white">{mockMatches.length}</p>
                   <p className="text-sm text-gray-100">Matches</p>
                 </div>
                 <div>
-                  <p className="text-2xl text-[#FF5722]">{profile.gpa}</p>
-                  <p className="text-sm text-gray-100">GPA</p>
+                  <p className="text-2xl text-white">{mockVideos.length}</p>
+                  <p className="text-sm text-gray-100">Videos</p>
                 </div>
               </div>
             </Card>
@@ -547,11 +713,11 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                 </Card>
 
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200"
+                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200"
                   onClick={() => setActiveTab('nil')}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-full flex items-center justify-center mb-3">
                       <DollarSign className="w-6 h-6 text-white" />
                     </div>
                     <p className="text-[#2196F3] text-sm mb-1">NIL Deals</p>
@@ -570,7 +736,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                       </div>
                       <div>
                         <p className="text-[#2196F3]">Academic Progress</p>
-                        <p className="text-sm text-gray-600">GPA: {mockAcademicProgress.currentGPA}</p>
+                        <p className="text-sm text-gray-600">Transcript on file</p>
                       </div>
                     </div>
                     <Badge className="bg-green-600 text-white">{mockAcademicProgress.ncaaEligibility}</Badge>
@@ -859,12 +1025,12 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                     <p className="text-[#2196F3]">{profile.position}</p>
                   </div>
                   <div>
-                    <Label className="text-gray-500 text-sm">GPA</Label>
-                    <p className="text-[#2196F3]">{profile.gpa}</p>
-                  </div>
-                  <div>
                     <Label className="text-gray-500 text-sm">Country</Label>
                     <p className="text-[#2196F3]">{profile.country}</p>
+                  </div>
+                  <div>
+                    <Label className="text-gray-500 text-sm">Year</Label>
+                    <p className="text-[#2196F3]">{profile.yearOfGraduation}</p>
                   </div>
                 </div>
                 <div>
@@ -1237,12 +1403,10 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
               <div className="space-y-4">
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-700">Current GPA</span>
-                    <span className="text-[#2196F3]">{mockAcademicProgress.currentGPA}</span>
+                    <span className="text-sm text-gray-700">Transcript Status</span>
+                    <span className="text-[#2196F3]">✓ On File</span>
                   </div>
-                  <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#2196F3]" style={{ width: `${mockAcademicProgress.currentGPA * 10}%` }}></div>
-                  </div>
+                  <p className="text-xs text-gray-600 mt-2">Our AI is processing your transcript to calculate your US GPA equivalent. You'll be notified when complete.</p>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
@@ -1512,7 +1676,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                     <h5 className="text-[#2196F3] mb-1">Freshman/Sophomore Year</h5>
                     <p className="text-sm text-gray-600 mb-2">Build your foundation</p>
                     <ul className="text-xs text-gray-600 space-y-1">
-                      <li>• Focus on academics and maintaining high GPA</li>
+                      <li>• Focus on academics and upload transcripts</li>
                       <li>• Develop athletic skills and attend camps</li>
                       <li>• Start creating highlight videos</li>
                     </ul>
@@ -1574,7 +1738,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                     </div>
                     <div className="p-3 bg-white rounded-xl">
                       <p className="mb-1"><strong>Academics Matter:</strong></p>
-                      <p className="text-xs">Coaches look for well-rounded athletes. A strong GPA opens doors to better programs and more scholarship money.</p>
+                      <p className="text-xs">Coaches look for well-rounded athletes. Strong academic performance opens doors to better programs and more scholarship money. Our AI converts your international transcripts automatically.</p>
                     </div>
                     <div className="p-3 bg-white rounded-xl">
                       <p className="mb-1"><strong>Be Yourself:</strong></p>
@@ -1749,12 +1913,44 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
         )}
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
-        <div className="max-w-md mx-auto grid grid-cols-4 h-16">
+      {/* Ad Popup Dialog */}
+      <Dialog open={showAdPopup} onOpenChange={setShowAdPopup}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center">Special Offer!</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-[#2196F3] to-[#00BCD4] rounded-lg p-6 text-white text-center">
+              <Star className="w-12 h-12 mx-auto mb-3" />
+              <h3 className="text-xl mb-2">Upgrade Your Profile</h3>
+              <p className="text-sm opacity-90 mb-4">
+                Get featured placement, advanced analytics, and priority messaging with coaches
+              </p>
+              <div className="bg-white/20 rounded-lg p-3 mb-4">
+                <p className="text-2xl">$19.99/month</p>
+                <p className="text-xs opacity-80">Premium Athlete Plan</p>
+              </div>
+              <Button className="w-full bg-white text-[#2196F3] hover:bg-gray-100">
+                Upgrade Now
+              </Button>
+            </div>
+            <Button 
+              variant="ghost" 
+              className="w-full"
+              onClick={() => setShowAdPopup(false)}
+            >
+              Continue with Basic Plan
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+        {/* Bottom Navigation - Mobile Only */}
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+          <div className="grid grid-cols-4 h-16">
           <button 
             onClick={() => setActiveTab('home')}
-            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'home' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'home' ? 'text-[#2196F3]' : 'text-gray-400'}`}
           >
             <Home className="w-6 h-6" />
             <span className="text-xs">Home</span>
@@ -1764,14 +1960,14 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
               setActiveTab('upload');
               setUploadStep('select');
             }}
-            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'upload' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'upload' ? 'text-[#2196F3]' : 'text-gray-400'}`}
           >
             <Upload className="w-6 h-6" />
             <span className="text-xs">Upload</span>
           </button>
           <button 
             onClick={() => setActiveTab('messages')}
-            className={`flex flex-col items-center justify-center gap-1 relative ${activeTab === 'messages' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+            className={`flex flex-col items-center justify-center gap-1 relative ${activeTab === 'messages' ? 'text-[#2196F3]' : 'text-gray-400'}`}
           >
             <MessageCircle className="w-6 h-6" />
             <span className="text-xs">Messages</span>
@@ -1779,11 +1975,12 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
           </button>
           <button 
             onClick={() => setActiveTab('profile')}
-            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'profile' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+            className={`flex flex-col items-center justify-center gap-1 ${activeTab === 'profile' ? 'text-[#2196F3]' : 'text-gray-400'}`}
           >
             <User className="w-6 h-6" />
             <span className="text-xs">Profile</span>
           </button>
+          </div>
         </div>
       </div>
     </div>

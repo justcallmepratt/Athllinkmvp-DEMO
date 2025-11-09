@@ -40,40 +40,40 @@ export function AthletePayment({ onComplete, onBack }: AthletePaymentProps) {
       <div className="max-w-2xl mx-auto p-6">
         <Card className="p-8 rounded-2xl">
           <div className="mb-6">
-            <Badge className="bg-[#FF5722] text-white mb-4 px-4 py-2">
-              One-Time Annual Fee
+            <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white mb-4 px-4 py-2">
+              Monthly Subscription
             </Badge>
             <h3 className="text-[#2196F3] mb-2">Athlete Membership</h3>
             <p className="text-gray-600">Get full access to connect with recruiters worldwide</p>
           </div>
 
-          <Card className="p-6 bg-gradient-to-br from-blue-50 to-orange-50 border-[#2196F3] rounded-2xl mb-6">
+          <Card className="p-6 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-2 border-[#2196F3]/20 rounded-2xl mb-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-gray-700">Annual Membership</span>
+              <span className="text-gray-700">Monthly Membership</span>
               <div className="text-right">
-                <p className="text-3xl text-[#2196F3]">$20</p>
-                <p className="text-sm text-gray-600">/year</p>
+                <p className="text-3xl text-[#2196F3]">$9.99</p>
+                <p className="text-sm text-gray-600">/month</p>
               </div>
             </div>
-            <div className="space-y-2 pt-4 border-t border-gray-200">
+            <div className="space-y-2 pt-4 border-t border-[#2196F3]/20">
               <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[#FF5722]" />
+                <Check className="w-4 h-4 text-[#00BCD4]" />
                 <span>Unlimited video uploads</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[#FF5722]" />
+                <Check className="w-4 h-4 text-[#00BCD4]" />
                 <span>Connect with unlimited recruiters</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[#FF5722]" />
+                <Check className="w-4 h-4 text-[#00BCD4]" />
                 <span>AI-powered college matching</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[#FF5722]" />
+                <Check className="w-4 h-4 text-[#00BCD4]" />
                 <span>Performance analytics dashboard</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[#FF5722]" />
+                <Check className="w-4 h-4 text-[#00BCD4]" />
                 <span>Direct messaging with coaches</span>
               </div>
             </div>
@@ -122,13 +122,13 @@ export function AthletePayment({ onComplete, onBack }: AthletePaymentProps) {
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600">Annual Membership</span>
-                <span className="text-gray-900">$20.00</span>
+                <span className="text-gray-600">Monthly Membership</span>
+                <span className="text-gray-900">$9.99</span>
               </div>
               <div className="border-t border-gray-200 pt-2 mt-2">
                 <div className="flex justify-between">
                   <span className="text-gray-900">Total Due Today</span>
-                  <span className="text-[#2196F3] text-lg">$20.00</span>
+                  <span className="text-[#2196F3] text-lg">$9.99</span>
                 </div>
               </div>
             </div>
@@ -136,13 +136,23 @@ export function AthletePayment({ onComplete, onBack }: AthletePaymentProps) {
 
           <Button
             onClick={onComplete}
-            className="w-full h-12 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+            className="w-full h-12 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
           >
-            Complete Registration - $20
+            Complete Registration - $9.99
           </Button>
 
-          <p className="text-center text-xs text-gray-500 mt-4">
-            Your membership will automatically renew after one year. Cancel anytime from your account settings.
+          <div className="flex items-center justify-center gap-2 mt-4 text-sm text-gray-500">
+            <CreditCard className="w-4 h-4" />
+            <span>Secure payment powered by</span>
+            <span className="text-[#635BFF] font-semibold">Stripe</span>
+          </div>
+
+          <p className="text-center text-xs text-gray-500 mt-3">
+            Your membership will automatically renew monthly. Cancel anytime from your account settings.
+          </p>
+
+          <p className="text-center text-xs text-gray-400 mt-2">
+            * Customers are responsible for any additional fees (e.g., currency conversion, international transaction fees) that may be charged by their payment provider or financial institution.
           </p>
         </Card>
       </div>

@@ -9,6 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { DetailedAIReport } from './DetailedAIReport';
 import { DetailedAIReportRefactored } from './ai-reports/DetailedAIReportRefactored';
 import athlinkLogo from 'figma:asset/2dea44558ee75ccc34db0ab7f1dff6684b053f54.png';
+import tsubasaImage from 'figma:asset/a6e0f0455aae745a0e72af14385a8621261466ed.png';
+import tsubasaAwardPhoto from 'figma:asset/d0766429ed24a99b2e4b7f768aad06f72b4624be.png';
+import tsubasaJapanJerseyPhoto from 'figma:asset/28af9554859390cb24a7b1bb435f24613e47c708.png';
 
 interface RecruiterAppProps {
   onBack: () => void;
@@ -17,6 +20,81 @@ interface RecruiterAppProps {
 const mockAthletes = [
   {
     id: 1,
+    name: 'Tsubasa Brennan',
+    sport: 'Football',
+    position: 'Wide Receiver',
+    gpa: '3.9',
+    country: 'Japan',
+    school: 'Koshien Bowl High School',
+    video: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=600',
+    caption: 'Koshien Bowl Championship Highlights 2024',
+    stats: '62 receptions, 1,124 yards, 14 TDs',
+    avatar: tsubasaImage,
+    bio: 'Elite wide receiver from Osaka, Japan with exceptional route-running and hands. Started playing American football at age 12 and quickly rose through Japan\'s competitive high school football scene. Known for precise route running, reliable hands, and elite speed off the line. Seeking a top Division I program to continue developing while pursuing a degree in International Business.',
+    photos: [
+      tsubasaImage,
+      tsubasaAwardPhoto,
+      tsubasaJapanJerseyPhoto,
+      'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=600',
+      'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600'
+    ],
+    gradeLevel: 'Senior (12th Grade)',
+    credits: '43 (NCAA Core: 39)',
+    height: "6'1\"",
+    weight: '190 lbs',
+    yearOfGraduation: '2025',
+    jerseyNumber: '18',
+    dominantSide: 'Right',
+    gamesPlayed: '11',
+    seasonStats: '62 REC, 1,124 YDS, 14 TDs, 18.1 YDS/REC, 87% catch rate',
+    achievements: 'Koshien Bowl All-Star 2024, Japan National U-19 Team, Leading Receiver Kansai Region',
+    phone: '+81 6-8765-4321',
+    testScores: 'SAT: 1390, TOEFL: 108',
+    eligibilityStatus: 'NCAA Cleared',
+    videoCount: 9,
+    matchRate: 94,
+    // Combine-style metrics
+    wingspan: "6'3\"",
+    verticalJump: '36 inches',
+    standingJump: '31 inches',
+    fortyYard: '4.42s',
+    shuttleRun: '4.15s',
+    threeCone: '6.89s',
+    benchPress: '225 lbs x 10 reps',
+    flexibility: '86/100',
+    agility: '94/100',
+    strength: '89/100',
+    speed: '95/100',
+    aiScore: 95,
+    aiInsights: 'Exceptional route precision with NFL-level footwork. Elite separation skills at the top of routes. Reliable hands with strong catching radius. Excellent body control on contested catches. Shows maturity in release techniques against press coverage. Needs to continue building strength for physical SEC/Big Ten play.',
+    projection: 'Division I - Power 5 Conference (Top WR Prospect)',
+    comparablePlayer: 'Hines Ward (playing style)',
+    aiVerified: true,
+    arVerified: true,
+    sportsRadarId: 'tsubasa-brennan-2025',
+    sportsRadarStats: {
+      gamesPlayed: 11,
+      receptions: 62,
+      receivingYards: 1124,
+      touchdowns: 14,
+      yardsPerReception: 18.1,
+      catchPercentage: 87
+    },
+    youtubeVideos: [
+      {
+        title: 'Japan National Team vs USA All-Stars Game Highlights',
+        url: 'https://www.youtube.com/embed/yG-oY2VCZkM',
+        description: 'International game performance showcasing elite route running and hands'
+      },
+      {
+        title: 'Tsubasa Brennan Season Highlights',
+        url: 'https://www.youtube.com/embed/C-acIZP7oxs',
+        description: 'Full season highlight reel - 62 receptions, 1,124 yards, 14 touchdowns'
+      }
+    ],
+  },
+  {
+    id: 2,
     name: 'Lucas Senna',
     sport: 'Soccer',
     position: 'Forward',
@@ -27,6 +105,14 @@ const mockAthletes = [
     caption: 'Brazilian Championship Goals Compilation',
     stats: '18 goals, 12 assists',
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200',
+    bio: 'Passionate forward with international tournament experience. Started playing at age 5 and has represented Brazil at U-17 and U-19 levels. Known for technical skills, finishing ability, and creative playmaking. Seeking a top Division I program to continue developing while pursuing a degree in Sports Management.',
+    photos: [
+      'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600',
+      'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600',
+      'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600'
+    ],
+    gradeLevel: 'Senior (12th Grade)',
+    credits: '42 (NCAA Core: 38)',
     height: "5'11\"",
     weight: '165 lbs',
     yearOfGraduation: '2025',
@@ -69,7 +155,7 @@ const mockAthletes = [
     },
   },
   {
-    id: 2,
+    id: 3,
     name: 'Yuki Tanaka',
     sport: 'Basketball',
     position: 'Point Guard',
@@ -80,6 +166,14 @@ const mockAthletes = [
     caption: 'All-Japan High School Tournament Highlights',
     stats: '24 points, 9 assists',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200',
+    bio: 'Elite point guard with exceptional court vision and leadership qualities. Captain of U-18 Japan National Team. Combines traditional Japanese discipline with modern playing style. Interested in studying Computer Science while competing at the highest collegiate level.',
+    photos: [
+      'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600',
+      'https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=600',
+      'https://images.unsplash.com/photo-1519766304817-4f37bda74a26?w=600'
+    ],
+    gradeLevel: 'Senior (12th Grade)',
+    credits: '44 (NCAA Core: 40)',
     height: "6'0\"",
     weight: '170 lbs',
     yearOfGraduation: '2025',
@@ -122,7 +216,7 @@ const mockAthletes = [
     },
   },
   {
-    id: 3,
+    id: 4,
     name: 'Ana Senna',
     sport: 'Volleyball',
     position: 'Outside Hitter',
@@ -164,7 +258,7 @@ const mockAthletes = [
     comparablePlayer: 'Gabriela Guimarães (playing style)',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Diego Martinez',
     sport: 'Baseball',
     position: 'Pitcher',
@@ -206,7 +300,7 @@ const mockAthletes = [
     comparablePlayer: 'Marcus Stroman (mechanics)',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Sofia Kowalski',
     sport: 'Track & Field',
     position: '400m / 800m',
@@ -248,7 +342,7 @@ const mockAthletes = [
     comparablePlayer: 'Athing Mu (speed profile)',
   },
   {
-    id: 6,
+    id: 7,
     name: 'Hiroshi Yamamoto',
     sport: 'Tennis',
     position: 'Singles',
@@ -290,7 +384,7 @@ const mockAthletes = [
     comparablePlayer: 'Kei Nishikori (movement)',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Isabella Silva',
     sport: 'Swimming',
     position: 'Freestyle/Butterfly',
@@ -332,7 +426,7 @@ const mockAthletes = [
     comparablePlayer: 'Caeleb Dressel (explosiveness)',
   },
   {
-    id: 8,
+    id: 9,
     name: 'Carlos Ruiz',
     sport: 'Football',
     position: 'Linebacker',
@@ -682,7 +776,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [selectedAthlete, setSelectedAthlete] = useState<any>(null);
   const [filterOpen, setFilterOpen] = useState(false);
-  const [savedAthletes, setSavedAthletes] = useState<number[]>([1, 3, 7]); // IDs of saved athletes
+  const [savedAthletes, setSavedAthletes] = useState<number[]>([1, 3, 8]); // IDs of saved athletes
   const [compareAthletes, setCompareAthletes] = useState<number[]>([]);
   const [showZoomScheduler, setShowZoomScheduler] = useState(false);
   const [zoomMeetingCreated, setZoomMeetingCreated] = useState(false);
@@ -730,152 +824,147 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <div className="flex items-center gap-3 mb-2">
-            <img src={athlinkLogo} alt="Athlink" className="w-10 h-10 object-contain" />
-            <h2 className="text-[#2196F3]">Athlink</h2>
+      <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen overflow-y-auto">
+        <div className="p-6 border-b border-gray-100">
+          <div className="flex items-center gap-3 mb-1">
+            <img src={athlinkLogo} alt="Athlink" className="w-8 h-8 object-contain" />
+            <h2 className="text-gray-900">Athlink</h2>
           </div>
-          <p className="text-gray-600 text-sm">Recruiter Portal</p>
+          <p className="text-gray-500 text-xs">Recruiter Portal</p>
         </div>
         
-        <nav className="flex-1 px-3 py-4">
+        <nav className="flex-1 px-4 py-6">
           <button
             onClick={() => setActiveTab('dashboard')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'dashboard' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'dashboard' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Home className="w-5 h-5" />
-            Dashboard
+            <Home className="w-4 h-4" />
+            <span className="text-sm">Dashboard</span>
           </button>
           <button
             onClick={() => setActiveTab('discover')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'discover' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'discover' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Search className="w-5 h-5" />
-            Discover
+            <Search className="w-4 h-4" />
+            <span className="text-sm">Discover</span>
           </button>
           <button
             onClick={() => setActiveTab('saved')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors relative ${
-              activeTab === 'saved' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'saved' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Heart className="w-5 h-5" />
-            Saved
+            <Heart className="w-4 h-4" />
+            <span className="text-sm">Saved</span>
             {savedAthletes.length > 0 && (
-              <Badge className="ml-auto bg-[#2196F3] text-white">{savedAthletes.length}</Badge>
+              <span className={`ml-auto text-xs px-2 py-0.5 rounded-full ${activeTab === 'saved' ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-700'}`}>{savedAthletes.length}</span>
             )}
           </button>
           <button
             onClick={() => setActiveTab('messages')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors relative ${
-              activeTab === 'messages' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'messages' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <MessageCircle className="w-5 h-5" />
-            Messages
-            <div className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></div>
+            <MessageCircle className="w-4 h-4" />
+            <span className="text-sm">Messages</span>
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full ml-auto"></div>
           </button>
           <button
             onClick={() => setActiveTab('compare')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'compare' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'compare' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <BarChart3 className="w-5 h-5" />
-            Compare
+            <BarChart3 className="w-4 h-4" />
+            <span className="text-sm">Compare</span>
             {compareAthletes.length > 0 && (
-              <Badge className="ml-auto bg-[#2196F3] text-white">{compareAthletes.length}/3</Badge>
+              <span className={`ml-auto text-xs px-2 py-0.5 rounded-full ${activeTab === 'compare' ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-700'}`}>{compareAthletes.length}/3</span>
             )}
           </button>
           <button
             onClick={() => setActiveTab('reports')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'reports' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'reports' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <FileText className="w-5 h-5" />
-            AI Reports
+            <FileText className="w-4 h-4" />
+            <span className="text-sm">AI Reports</span>
           </button>
           
-          {/* Divider */}
-          <div className="my-4 border-t border-gray-200"></div>
-          <p className="px-4 text-xs text-gray-500 mb-2">PARTNERSHIPS</p>
+          <div className="my-6 border-t border-gray-100"></div>
           
           <button
             onClick={() => setActiveTab('sponsors')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'sponsors' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'sponsors' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Handshake className="w-5 h-5" />
-            Sponsors
-            <Badge className="ml-auto bg-green-500 text-white text-xs">New</Badge>
+            <Handshake className="w-4 h-4" />
+            <span className="text-sm">Sponsors</span>
           </button>
           <button
             onClick={() => setActiveTab('federations')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'federations' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'federations' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Globe className="w-5 h-5" />
-            Federations
+            <Globe className="w-4 h-4" />
+            <span className="text-sm">Federations</span>
           </button>
           <button
             onClick={() => setActiveTab('nil')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'nil' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'nil' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <DollarSign className="w-5 h-5" />
-            NIL Deals
-            <Badge className="ml-auto bg-green-500 text-white text-xs">New</Badge>
+            <DollarSign className="w-4 h-4" />
+            <span className="text-sm">NIL Deals</span>
           </button>
           <button
             onClick={() => setActiveTab('camps')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'camps' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'camps' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Trophy className="w-5 h-5" />
-            Summer Camps
+            <Trophy className="w-4 h-4" />
+            <span className="text-sm">Summer Camps</span>
           </button>
           <button
             onClick={() => setActiveTab('contracts')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'contracts' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'contracts' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <FileSignature className="w-5 h-5" />
-            Contracts
+            <FileSignature className="w-4 h-4" />
+            <span className="text-sm">Contracts</span>
           </button>
           
-          {/* Divider */}
-          <div className="my-4 border-t border-gray-200"></div>
+          <div className="my-6 border-t border-gray-100"></div>
           
           <button
             onClick={() => setActiveTab('profile')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl mb-2 transition-colors ${
-              activeTab === 'profile' ? 'bg-[#FF5722] text-white' : 'text-gray-700 hover:bg-gray-100'
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 transition-colors ${
+              activeTab === 'profile' ? 'bg-[#2196F3] text-white' : 'text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <User className="w-5 h-5" />
-            Profile
+            <User className="w-4 h-4" />
+            <span className="text-sm">Profile</span>
           </button>
         </nav>
 
-        <button onClick={onBack} className="p-6 text-gray-600 hover:text-[#2196F3] flex items-center gap-2 border-t border-gray-200">
+        <button onClick={onBack} className="p-6 text-gray-500 hover:text-gray-900 flex items-center gap-2 border-t border-gray-100 text-sm">
           <ArrowLeft className="w-5 h-5" />
           Back to Selection
         </button>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto md:ml-64">
         {/* Mobile Header */}
         <div className="md:hidden bg-[#2196F3] text-white p-4 sticky top-0 z-10">
           <div className="flex items-center justify-between">
@@ -902,7 +991,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Dashboard Tab */}
         {activeTab === 'dashboard' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <h1 className="text-[#2196F3] mb-8">Dashboard</h1>
 
             {/* Stats Grid */}
@@ -912,9 +1001,9 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 <p className="text-3xl text-[#2196F3] mb-2">234</p>
                 <p className="text-xs text-green-600">+12% from last month</p>
               </Card>
-              <Card className="p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100">
+              <Card className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50">
                 <p className="text-gray-600 text-sm mb-1">Matched</p>
-                <p className="text-3xl text-[#FF5722] mb-2">67</p>
+                <p className="text-3xl text-[#2196F3] mb-2">67</p>
                 <p className="text-xs text-green-600">+23% from last month</p>
               </Card>
               <Card className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100">
@@ -938,7 +1027,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                     <span className="text-sm">Brazil</span>
                     <div className="flex items-center gap-2">
                       <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#FF5722]" style={{ width: '45%' }}></div>
+                        <div className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3]" style={{ width: '45%' }}></div>
                       </div>
                       <span className="text-sm text-gray-600">45%</span>
                     </div>
@@ -956,7 +1045,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                     <span className="text-sm">Mexico</span>
                     <div className="flex items-center gap-2">
                       <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#FF5722]" style={{ width: '15%' }}></div>
+                        <div className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3]" style={{ width: '15%' }}></div>
                       </div>
                       <span className="text-sm text-gray-600">15%</span>
                     </div>
@@ -980,7 +1069,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                     <span className="text-sm">Soccer</span>
                     <div className="flex items-center gap-2">
                       <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#FF5722]" style={{ width: '35%' }}></div>
+                        <div className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3]" style={{ width: '35%' }}></div>
                       </div>
                       <span className="text-sm text-gray-600">35%</span>
                     </div>
@@ -998,7 +1087,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                     <span className="text-sm">Volleyball</span>
                     <div className="flex items-center gap-2">
                       <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#FF5722]" style={{ width: '20%' }}></div>
+                        <div className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3]" style={{ width: '20%' }}></div>
                       </div>
                       <span className="text-sm text-gray-600">20%</span>
                     </div>
@@ -1091,7 +1180,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
                         <Play className="w-12 h-12 text-white" />
                       </div>
-                      <Badge className="absolute top-3 right-3 bg-[#FF5722] text-white">
+                      <Badge className="absolute top-3 right-3 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0">
                         GPA {athlete.gpa}
                       </Badge>
                       <Badge className="absolute top-3 left-3 bg-white/90 text-[#2196F3]">
@@ -1110,7 +1199,12 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                           <AvatarFallback>{athlete.name[0]}</AvatarFallback>
                         </Avatar>
                         <div className="flex-1">
-                          <p className="text-[#2196F3]">{athlete.name}</p>
+                          <p className="text-[#2196F3] flex items-center gap-1">
+                            {athlete.name}
+                            {athlete.aiVerified && athlete.arVerified && (
+                              <CheckCircle2 className="w-4 h-4 text-[#00BCD4]" />
+                            )}
+                          </p>
                           <p className="text-sm text-gray-500">{athlete.sport} • {athlete.position}</p>
                         </div>
                       </div>
@@ -1122,8 +1216,25 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                         <span>Class of {athlete.yearOfGraduation}</span>
                       </div>
                       <p className="text-sm text-gray-600 mb-3 line-clamp-2">{athlete.stats}</p>
+                      
+                      {/* 3 Verification Checkmarks */}
+                      <div className="mb-3 flex items-center gap-2 text-xs flex-wrap">
+                        <div className="flex items-center gap-1 text-[#00BCD4]">
+                          <CheckCircle2 className="w-4 h-4" />
+                          <span className="text-gray-600">NCAA Eligible</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-[#00BCD4]">
+                          <CheckCircle2 className="w-4 h-4" />
+                          <span className="text-gray-600">AI/AR</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-[#00BCD4]">
+                          <CheckCircle2 className="w-4 h-4" />
+                          <span className="text-gray-600">Academic</span>
+                        </div>
+                      </div>
+                      
                       <div className="flex gap-2">
-                        <Button className="flex-1 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl text-sm h-9">
+                        <Button className="flex-1 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl text-sm h-9">
                           <Heart className="w-3 h-3 mr-1" />
                           Match
                         </Button>
@@ -1175,24 +1286,32 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                           <AvatarImage src={currentAthlete.avatar} />
                           <AvatarFallback>{currentAthlete.name[0]}</AvatarFallback>
                         </Avatar>
-                        <div>
-                          <p className="text-white">{currentAthlete.name}</p>
+                        <div className="flex-1">
+                          <p className="text-white flex items-center gap-2">
+                            {currentAthlete.name}
+                            {currentAthlete.aiVerified && currentAthlete.arVerified && (
+                              <CheckCircle2 className="w-5 h-5 text-[#00BCD4]" />
+                            )}
+                          </p>
                           <p className="text-sm text-gray-200">{currentAthlete.sport} • {currentAthlete.position}</p>
                         </div>
                       </div>
                       <p className="text-white mb-2">{currentAthlete.caption}</p>
                       <p className="text-gray-200 text-sm">{currentAthlete.stats}</p>
                       
-                      <div className="flex gap-2 pt-2">
-                        <Badge className="bg-[#FF5722] text-white">
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0">
                           GPA {currentAthlete.gpa}
                         </Badge>
                         <Badge variant="secondary" className="bg-white/20 text-white">
                           {currentAthlete.country}
                         </Badge>
-                        <Badge variant="secondary" className="bg-white/20 text-white">
-                          {currentAthlete.school}
-                        </Badge>
+                        {currentAthlete.aiVerified && currentAthlete.arVerified && (
+                          <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0">
+                            <CheckCircle2 className="w-3 h-3 mr-1" />
+                            Verified
+                          </Badge>
+                        )}
                       </div>
                     </div>
 
@@ -1211,7 +1330,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                           toggleSaveAthlete(currentAthlete.id);
                           handleMatch();
                         }}
-                        className="flex-1 h-14 rounded-2xl bg-[#FF5722] hover:bg-[#F4511E] text-white border-2 border-[#FF5722]"
+                        className="flex-1 h-14 rounded-2xl bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white border-0"
                       >
                         <Heart className={`w-6 h-6 mr-2 ${savedAthletes.includes(currentAthlete.id) ? 'fill-current' : ''}`} />
                         {savedAthletes.includes(currentAthlete.id) ? 'Saved' : 'Match'}
@@ -1234,13 +1353,13 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Saved Athletes Tab */}
         {activeTab === 'saved' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-[#2196F3] mb-2">Saved Athletes</h1>
                 <p className="text-gray-600">{savedAthletes.length} athletes in your favorites</p>
               </div>
-              <Button className="bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl">
+              <Button className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl">
                 <FileText className="w-4 h-4 mr-2" />
                 Export List
               </Button>
@@ -1337,7 +1456,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Compare Athletes Tab */}
         {activeTab === 'compare' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="mb-8">
               <h1 className="text-[#2196F3] mb-2">Compare Athletes</h1>
               <p className="text-gray-600">Side-by-side comparison (select up to 3 athletes)</p>
@@ -1424,7 +1543,10 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                           ))}
                       </tr>
                       <tr className="border-b hover:bg-gray-50">
-                        <td className="py-3 px-4 text-sm text-gray-700">GPA</td>
+                        <td className="py-3 px-4 text-sm text-gray-700">
+                          GPA 
+                          <span className="text-xs text-gray-400 block">AI-Converted</span>
+                        </td>
                         {mockAthletes
                           .filter(athlete => compareAthletes.includes(athlete.id))
                           .map(athlete => (
@@ -1550,7 +1672,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Messages Tab */}
         {activeTab === 'messages' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <h1 className="text-[#2196F3]">Messages</h1>
               <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2">
@@ -1816,7 +1938,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Sponsors Tab */}
         {activeTab === 'sponsors' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-[#2196F3] mb-2">Sponsor Partnerships</h1>
@@ -1887,7 +2009,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Federations Tab */}
         {activeTab === 'federations' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-[#2196F3] mb-2">International Federations</h1>
@@ -1962,7 +2084,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* NIL Deals Tab */}
         {activeTab === 'nil' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-[#2196F3] mb-2">NIL Deals</h1>
@@ -2073,7 +2195,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Summer Camps Tab */}
         {activeTab === 'camps' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-[#2196F3] mb-2">Summer Camps & Showcases</h1>
@@ -2187,7 +2309,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
         {/* Contracts Tab */}
         {activeTab === 'contracts' && (
-          <div className="p-6 max-w-7xl mx-auto">
+          <div className="p-6 max-w-[1600px] mx-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-[#2196F3] mb-2">Recruitment Contracts</h1>
@@ -2426,6 +2548,111 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 </div>
               </div>
             </Card>
+
+            {/* Subscription & Pricing */}
+            <Card className="p-6 rounded-2xl mt-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#2196F3] to-[#1976D2] rounded-lg flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-[#2196F3]">Your Subscription</h4>
+                    <p className="text-sm text-gray-600">Manage your plan and add-ons</p>
+                  </div>
+                </div>
+                <Badge className="bg-green-500 text-white">Active</Badge>
+              </div>
+
+              {/* Current Plan */}
+              <div className="p-4 bg-gradient-to-br from-[#2196F3]/10 to-[#1976D2]/10 rounded-xl border-2 border-[#2196F3]/30 mb-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <h5 className="text-[#2196F3] mb-1">Pro Recruiter Plan</h5>
+                    <p className="text-sm text-gray-600">Full access to all features</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-2xl text-[#2196F3]">$3,000</p>
+                    <p className="text-xs text-gray-500">/month</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-2 pt-3 border-t border-[#2196F3]/20">
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <div className="w-5 h-5 bg-[#2196F3] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span>Access 12,000+ verified international athletes</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <div className="w-5 h-5 bg-[#2196F3] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span>AI-powered athlete matching & scouting</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <div className="w-5 h-5 bg-[#2196F3] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span>SportsRadar verified statistics & metrics</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <div className="w-5 h-5 bg-[#2196F3] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span>Direct messaging & integrated Zoom calls</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Add-ons Section */}
+              <div className="mb-4">
+                <h5 className="text-sm text-gray-700 mb-3">Available Add-ons</h5>
+                <div className="p-4 bg-gradient-to-br from-[#00BCD4]/10 to-[#2196F3]/10 rounded-xl border-2 border-[#00BCD4]/30">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h6 className="text-[#00BCD4] mb-1">AI Team Fit Analysis</h6>
+                        <p className="text-xs text-gray-600">Advanced compatibility scoring for your team</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xl text-[#00BCD4]">$125</p>
+                      <p className="text-xs text-gray-500">one-time</p>
+                    </div>
+                  </div>
+                  <Button className="w-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl">
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Add AI Team Fit Analysis
+                  </Button>
+                </div>
+              </div>
+
+              {/* Billing Information */}
+              <div className="pt-4 border-t">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-gray-600">Next billing date</span>
+                  <span className="text-sm text-[#2196F3]">December 9, 2025</span>
+                </div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-600">Payment method</span>
+                  <span className="text-sm text-[#2196F3]">•••• 4242</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button variant="outline" className="rounded-xl border-[#2196F3] text-[#2196F3] hover:bg-[#2196F3]/5">
+                    <Settings className="w-4 h-4 mr-2" />
+                    Manage Plan
+                  </Button>
+                  <Button variant="outline" className="rounded-xl border-gray-300 text-gray-700 hover:bg-gray-50">
+                    <Download className="w-4 h-4 mr-2" />
+                    Billing History
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         )}
 
@@ -2434,21 +2661,21 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
           <div className="grid grid-cols-5 h-16">
             <button
               onClick={() => setActiveTab('dashboard')}
-              className={`flex flex-col items-center justify-center ${activeTab === 'dashboard' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+              className={`flex flex-col items-center justify-center ${activeTab === 'dashboard' ? 'text-[#2196F3]' : 'text-gray-400'}`}
             >
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
             <button
               onClick={() => setActiveTab('discover')}
-              className={`flex flex-col items-center justify-center ${activeTab === 'discover' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+              className={`flex flex-col items-center justify-center ${activeTab === 'discover' ? 'text-[#2196F3]' : 'text-gray-400'}`}
             >
               <Search className="w-5 h-5" />
               <span className="text-xs">Discover</span>
             </button>
             <button
               onClick={() => setActiveTab('saved')}
-              className={`flex flex-col items-center justify-center relative ${activeTab === 'saved' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+              className={`flex flex-col items-center justify-center relative ${activeTab === 'saved' ? 'text-[#2196F3]' : 'text-gray-400'}`}
             >
               <Heart className="w-5 h-5" />
               <span className="text-xs">Saved</span>
@@ -2458,7 +2685,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
             </button>
             <button
               onClick={() => setActiveTab('messages')}
-              className={`flex flex-col items-center justify-center relative ${activeTab === 'messages' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+              className={`flex flex-col items-center justify-center relative ${activeTab === 'messages' ? 'text-[#2196F3]' : 'text-gray-400'}`}
             >
               <MessageCircle className="w-5 h-5" />
               <span className="text-xs">Messages</span>
@@ -2466,7 +2693,7 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
             </button>
             <button
               onClick={() => setActiveTab('profile')}
-              className={`flex flex-col items-center justify-center ${activeTab === 'profile' ? 'text-[#FF5722]' : 'text-gray-400'}`}
+              className={`flex flex-col items-center justify-center ${activeTab === 'profile' ? 'text-[#2196F3]' : 'text-gray-400'}`}
             >
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
@@ -2493,40 +2720,112 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Header */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <Avatar className="w-16 h-16 mr-4">
-                    <AvatarImage src={selectedAthlete.avatar} />
-                    <AvatarFallback>{selectedAthlete.name[0]}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h3 className="text-[#2196F3]">{selectedAthlete.name}</h3>
-                    <p className="text-gray-600">{selectedAthlete.sport} • {selectedAthlete.position}</p>
-                    <p className="text-sm text-gray-500">Class of {selectedAthlete.yearOfGraduation}</p>
+              {/* Header - Name, Photos, Position, Country */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <Avatar className="w-16 h-16 mr-4">
+                      <AvatarImage src={selectedAthlete.avatar} />
+                      <AvatarFallback>{selectedAthlete.name[0]}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="text-[#2196F3] flex items-center gap-2">
+                        {selectedAthlete.name}
+                        {selectedAthlete.aiVerified && selectedAthlete.arVerified && (
+                          <CheckCircle2 className="w-5 h-5 text-[#00BCD4]" />
+                        )}
+                      </h3>
+                      <p className="text-gray-600">{selectedAthlete.sport} • {selectedAthlete.position}</p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge variant="secondary" className="text-xs">
+                          🌎 {selectedAthlete.country}
+                        </Badge>
+                        <Badge variant="secondary" className="text-xs">
+                          Class of {selectedAthlete.yearOfGraduation}
+                        </Badge>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* Bio Section */}
+                {selectedAthlete.bio && (
+                  <Card className="p-4 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-[#2196F3]/20">
+                    <h4 className="text-[#2196F3] mb-2 flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      Bio
+                    </h4>
+                    <p className="text-sm text-gray-700 leading-relaxed">{selectedAthlete.bio}</p>
+                  </Card>
+                )}
+
+                {/* Photo Gallery */}
+                {selectedAthlete.photos && selectedAthlete.photos.length > 0 && (
+                  <div>
+                    <h4 className="text-[#2196F3] mb-3 flex items-center gap-2">
+                      <Video className="w-4 h-4" />
+                      Photos & Media
+                    </h4>
+                    <div className="grid grid-cols-3 gap-2">
+                      {selectedAthlete.photos.map((photo: string, idx: number) => (
+                        <div key={idx} className="relative aspect-square rounded-lg overflow-hidden border-2 border-[#2196F3]/20 hover:border-[#00BCD4] transition-colors cursor-pointer">
+                          <img src={photo} alt={`${selectedAthlete.name} photo ${idx + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* YouTube Videos Section */}
+                {selectedAthlete.youtubeVideos && selectedAthlete.youtubeVideos.length > 0 && (
+                  <div>
+                    <h4 className="text-[#2196F3] mb-3 flex items-center gap-2">
+                      <Play className="w-5 h-5" />
+                      Highlight Videos
+                    </h4>
+                    <div className="space-y-4">
+                      {selectedAthlete.youtubeVideos.map((video: any, idx: number) => (
+                        <Card key={idx} className="overflow-hidden border-2 border-[#2196F3]/20 hover:border-[#00BCD4] transition-colors">
+                          <div className="aspect-video">
+                            <iframe
+                              className="w-full h-full"
+                              src={video.url}
+                              title={video.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                          <div className="p-4 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5">
+                            <h5 className="text-[#2196F3] mb-1">{video.title}</h5>
+                            <p className="text-sm text-gray-600">{video.description}</p>
+                          </div>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* AI/AR Verification Banner */}
               {selectedAthlete.aiVerified && selectedAthlete.arVerified && (
-                <Card className="p-4 bg-gradient-to-r from-purple-50 via-blue-50 to-cyan-50 border-2 border-purple-200">
+                <Card className="p-4 bg-gradient-to-r from-[#00BCD4]/10 via-[#2196F3]/10 to-[#00BCD4]/10 border-2 border-[#00BCD4]">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-2 rounded-lg">
+                      <div className="bg-gradient-to-br from-[#00BCD4] to-[#2196F3] p-2 rounded-lg">
                         <Sparkles className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-purple-900 flex items-center gap-2">
+                        <h4 className="text-[#2196F3] flex items-center gap-2">
                           AI/AR Verified Measurements
-                          <Shield className="w-4 h-4 text-green-600" />
+                          <CheckCircle2 className="w-4 h-4 text-[#00BCD4]" />
                         </h4>
                         <p className="text-xs text-gray-600">
                           All physical measurements verified using computer vision and augmented reality technology
                         </p>
                       </div>
                     </div>
-                    <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                    <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0">
                       <Eye className="w-3 h-3 mr-1" />
                       Verified
                     </Badge>
@@ -2536,78 +2835,201 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
 
               {/* Physical Stats */}
               <div className="grid grid-cols-4 gap-4 pt-4 border-t">
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl relative">
+                <div className="text-center p-4 bg-gradient-to-br from-[#2196F3]/10 to-[#00BCD4]/10 rounded-xl relative border border-[#2196F3]/20">
                   <p className="text-2xl text-[#2196F3]">{selectedAthlete.height}</p>
                   <p className="text-xs text-gray-600">Height</p>
                   {selectedAthlete.arVerified && (
-                    <Badge className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1.5 py-0.5">
-                      <Scan className="w-3 h-3" />
+                    <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white text-xs px-1.5 py-0.5 border-0">
+                      <CheckCircle2 className="w-3 h-3" />
                     </Badge>
                   )}
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl relative">
+                <div className="text-center p-4 bg-gradient-to-br from-[#2196F3]/10 to-[#00BCD4]/10 rounded-xl relative border border-[#2196F3]/20">
                   <p className="text-2xl text-[#2196F3]">{selectedAthlete.weight}</p>
                   <p className="text-xs text-gray-600">Weight</p>
                   {selectedAthlete.arVerified && (
-                    <Badge className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1.5 py-0.5">
-                      <Scan className="w-3 h-3" />
+                    <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white text-xs px-1.5 py-0.5 border-0">
+                      <CheckCircle2 className="w-3 h-3" />
                     </Badge>
                   )}
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl relative">
+                <div className="text-center p-4 bg-gradient-to-br from-[#2196F3]/10 to-[#00BCD4]/10 rounded-xl relative border border-[#2196F3]/20">
                   <p className="text-2xl text-[#2196F3]">{selectedAthlete.wingspan}</p>
                   <p className="text-xs text-gray-600">Wingspan</p>
                   {selectedAthlete.arVerified && (
-                    <Badge className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1.5 py-0.5">
-                      <Scan className="w-3 h-3" />
+                    <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white text-xs px-1.5 py-0.5 border-0">
+                      <CheckCircle2 className="w-3 h-3" />
                     </Badge>
                   )}
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl">
+                <div className="text-center p-4 bg-gradient-to-br from-[#2196F3]/10 to-[#00BCD4]/10 rounded-xl border border-[#2196F3]/20">
                   <p className="text-2xl text-[#2196F3]">{selectedAthlete.dominantSide}</p>
                   <p className="text-xs text-gray-600">Dominant</p>
                 </div>
               </div>
 
-              {/* Academic & Contact */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t">
-                <div>
-                  <p className="text-sm text-gray-500">High School</p>
-                  <p className="text-[#2196F3]">{selectedAthlete.school}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Country</p>
-                  <p className="text-[#2196F3]">{selectedAthlete.country}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">GPA</p>
-                  <p className="text-[#2196F3]">{selectedAthlete.gpa}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Graduation Year</p>
-                  <p className="text-[#2196F3]">{selectedAthlete.yearOfGraduation}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Test Scores</p>
-                  <p className="text-[#2196F3] text-sm">{selectedAthlete.testScores}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">NCAA Eligibility</p>
-                  <Badge className="bg-green-500 text-white mt-1">{selectedAthlete.eligibilityStatus}</Badge>
+              {/* Academics Section */}
+              <div className="pt-4 border-t">
+                <h4 className="text-[#2196F3] mb-4 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-white" />
+                  </div>
+                  Academics
+                  <CheckCircle2 className="w-5 h-5 text-[#00BCD4]" />
+                </h4>
+                <Card className="p-5 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-2 border-[#2196F3]/20">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        High School
+                      </p>
+                      <p className="text-[#2196F3]">{selectedAthlete.school}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        Grade Level
+                        <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                      </p>
+                      <p className="text-[#2196F3]">{selectedAthlete.gradeLevel || selectedAthlete.yearOfGraduation}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        GPA (AI-Converted)
+                        <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                      </p>
+                      <p className="text-[#2196F3]">{selectedAthlete.gpa}</p>
+                      <p className="text-xs text-gray-400 mt-1">From international transcript</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        Credits Completed
+                        <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                      </p>
+                      <p className="text-[#2196F3] text-sm">{selectedAthlete.credits || 'Not Available'}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        Test Scores
+                        <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                      </p>
+                      <p className="text-[#2196F3] text-sm">{selectedAthlete.testScores}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mb-1">
+                        NCAA Eligibility Status
+                        <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                      </p>
+                      <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white mt-1 border-0">
+                        <Shield className="w-3 h-3 mr-1" />
+                        {selectedAthlete.eligibilityStatus}
+                      </Badge>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Highlight Videos & Combine Videos */}
+              <div className="pt-4 border-t">
+                <h4 className="text-[#2196F3] mb-4 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                    <Video className="w-5 h-5 text-white" />
+                  </div>
+                  Highlight & Combine Videos
+                  <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white text-xs border-0">
+                    {selectedAthlete.videoCount} Videos
+                  </Badge>
+                </h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className="p-4 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-2 border-[#2196F3]/20 hover:border-[#00BCD4] transition-colors cursor-pointer">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                        <Play className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-[#2196F3]">Highlight Reels</p>
+                        <p className="text-xs text-gray-500">{selectedAthlete.videoCount - 2} videos</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600">Game highlights, skills showcase, tournament performances</p>
+                  </Card>
+                  <Card className="p-4 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-2 border-[#2196F3]/20 hover:border-[#00BCD4] transition-colors cursor-pointer">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#2196F3] to-[#00BCD4] rounded-lg flex items-center justify-center">
+                        <Activity className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-[#2196F3]">Combine Videos</p>
+                        <p className="text-xs text-gray-500">2 videos</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600">Speed testing, agility drills, strength measurements</p>
+                  </Card>
                 </div>
               </div>
 
-              {/* Match Rate & Videos */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t">
-                <Card className="p-4 bg-gradient-to-br from-orange-50 to-orange-100 border-0 text-center">
-                  <p className="text-3xl text-[#FF5722] mb-1">{selectedAthlete.matchRate}%</p>
-                  <p className="text-xs text-gray-600">Match Rate</p>
-                  <p className="text-xs text-gray-500 mt-1">Based on your criteria</p>
+              {/* Combine Measurements */}
+              <div className="pt-4 border-t">
+                <h4 className="text-[#2196F3] mb-4 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                    <Activity className="w-5 h-5 text-white" />
+                  </div>
+                  Combine Measurements
+                  <CheckCircle2 className="w-5 h-5 text-[#00BCD4]" />
+                </h4>
+                <Card className="p-4 bg-gradient-to-br from-[#2196F3]/5 to-[#00BCD4]/5 border-2 border-[#2196F3]/20">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.verticalJump}</p>
+                      <p className="text-xs text-gray-600">Vertical Jump</p>
+                    </div>
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.fortyYard}</p>
+                      <p className="text-xs text-gray-600">40-Yard Dash</p>
+                    </div>
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.shuttleRun}</p>
+                      <p className="text-xs text-gray-600">Shuttle Run</p>
+                    </div>
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.threeCone}</p>
+                      <p className="text-xs text-gray-600">3-Cone Drill</p>
+                    </div>
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.benchPress}</p>
+                      <p className="text-xs text-gray-600">Bench Press</p>
+                    </div>
+                    <div className="text-center p-3 bg-white rounded-lg">
+                      <p className="text-xl text-[#2196F3]">{selectedAthlete.standingJump}</p>
+                      <p className="text-xs text-gray-600">Standing Jump</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-4 gap-3 mt-4">
+                    <div className="text-center p-2 bg-white rounded-lg">
+                      <p className="text-lg text-[#2196F3]">{selectedAthlete.speed}</p>
+                      <p className="text-xs text-gray-600">Speed</p>
+                    </div>
+                    <div className="text-center p-2 bg-white rounded-lg">
+                      <p className="text-lg text-[#2196F3]">{selectedAthlete.agility}</p>
+                      <p className="text-xs text-gray-600">Agility</p>
+                    </div>
+                    <div className="text-center p-2 bg-white rounded-lg">
+                      <p className="text-lg text-[#2196F3]">{selectedAthlete.strength}</p>
+                      <p className="text-xs text-gray-600">Strength</p>
+                    </div>
+                    <div className="text-center p-2 bg-white rounded-lg">
+                      <p className="text-lg text-[#2196F3]">{selectedAthlete.flexibility}</p>
+                      <p className="text-xs text-gray-600">Flexibility</p>
+                    </div>
+                  </div>
                 </Card>
-                <Card className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 border-0 text-center">
-                  <p className="text-3xl text-[#2196F3] mb-1">{selectedAthlete.videoCount}</p>
-                  <p className="text-xs text-gray-600">Highlight Videos</p>
-                  <p className="text-xs text-gray-500 mt-1">Available to view</p>
+              </div>
+
+              {/* Match Rate */}
+              <div className="pt-4 border-t">
+                <Card className="p-4 bg-gradient-to-br from-[#00BCD4]/10 to-[#2196F3]/10 border-2 border-[#00BCD4] text-center">
+                  <p className="text-3xl text-[#2196F3] mb-1">{selectedAthlete.matchRate}%</p>
+                  <p className="text-xs text-gray-600">AI Match Rate</p>
+                  <p className="text-xs text-gray-500 mt-1">Based on your program criteria</p>
                 </Card>
               </div>
 
@@ -2636,20 +3058,21 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 <div className="pt-4 border-t">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-[#2196F3] flex items-center gap-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#2196F3] to-[#00BCD4] rounded-lg flex items-center justify-center">
                         <BarChart3 className="w-5 h-5 text-white" />
                       </div>
                       SportsRadar Verified Stats
+                      <CheckCircle2 className="w-5 h-5 text-[#00BCD4]" />
                     </h4>
-                    <Badge className="bg-blue-600 text-white text-xs">
+                    <Badge className="bg-gradient-to-r from-[#2196F3] to-[#00BCD4] text-white text-xs border-0">
                       <Shield className="w-3 h-3 mr-1" />
                       API Verified
                     </Badge>
                   </div>
-                  <Card className="p-4 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-blue-200">
+                  <Card className="p-4 bg-gradient-to-br from-[#00BCD4]/10 to-[#2196F3]/10 border-2 border-[#00BCD4]">
                     <div className="flex items-center gap-2 mb-4">
-                      <Badge className="bg-blue-600 text-white text-xs">
-                        <Shield className="w-3 h-3 mr-1" />
+                      <Badge className="bg-gradient-to-r from-[#2196F3] to-[#00BCD4] text-white text-xs border-0">
+                        <CheckCircle2 className="w-3 h-3 mr-1" />
                         SportsRadar Verified
                       </Badge>
                       <span className="text-xs text-gray-600">Statistics verified by SportsRadar API real-time data</span>
@@ -2670,23 +3093,63 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                 </div>
               )}
 
+              {/* AI Recruiting Profile */}
+              <div className="pt-4 border-t">
+                <h4 className="text-[#2196F3] mb-4 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
+                    <Brain className="w-5 h-5 text-white" />
+                  </div>
+                  AI-Generated Recruiting Profile
+                  <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white text-xs border-0">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    AI Score: {selectedAthlete.aiScore}
+                  </Badge>
+                </h4>
+                <Card className="p-5 bg-gradient-to-br from-[#00BCD4]/10 via-[#2196F3]/10 to-[#00BCD4]/10 border-2 border-[#00BCD4]">
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="text-sm text-[#2196F3] mb-2 flex items-center gap-2">
+                        <Target className="w-4 h-4" />
+                        AI Insights & Analysis
+                      </h5>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {selectedAthlete.aiInsights}
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 pt-3 border-t border-[#2196F3]/20">
+                      <div>
+                        <p className="text-xs text-gray-500 mb-1">Projected Level</p>
+                        <p className="text-sm text-[#2196F3]">{selectedAthlete.projection}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 mb-1">Playing Style Comparison</p>
+                        <p className="text-sm text-[#2196F3]">{selectedAthlete.comparablePlayer}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
               {/* AI/AR Technology Explanation */}
               {selectedAthlete.aiVerified && selectedAthlete.arVerified && (
                 <div className="pt-4 border-t">
                   <h4 className="text-[#2196F3] mb-3 flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-lg flex items-center justify-center">
                       <Sparkles className="w-5 h-5 text-white" />
                     </div>
                     AI/AR Verification Technology
                   </h4>
-                  <Card className="p-5 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 border-2 border-purple-200">
+                  <Card className="p-5 bg-gradient-to-br from-[#00BCD4]/10 via-[#2196F3]/10 to-[#00BCD4]/10 border-2 border-[#00BCD4]">
                     <div className="space-y-4">
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="bg-purple-600 p-1.5 rounded">
+                          <div className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] p-1.5 rounded">
                             <Eye className="w-4 h-4 text-white" />
                           </div>
-                          <h5 className="text-sm text-purple-900">Computer Vision Analysis</h5>
+                          <h5 className="text-sm text-[#2196F3] flex items-center gap-1">
+                            Computer Vision Analysis
+                            <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                          </h5>
                         </div>
                         <p className="text-xs text-gray-700 leading-relaxed pl-8">
                           Our AI analyzes uploaded videos frame-by-frame to verify athletic movements, calculate speed metrics, and assess technique. Machine learning models trained on thousands of athlete videos ensure accurate performance evaluation.
@@ -2694,10 +3157,13 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       </div>
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="bg-blue-600 p-1.5 rounded">
+                          <div className="bg-gradient-to-r from-[#2196F3] to-[#00BCD4] p-1.5 rounded">
                             <Scan className="w-4 h-4 text-white" />
                           </div>
-                          <h5 className="text-sm text-purple-900">AR Body Measurement</h5>
+                          <h5 className="text-sm text-[#2196F3] flex items-center gap-1">
+                            AR Body Measurement
+                            <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                          </h5>
                         </div>
                         <p className="text-xs text-gray-700 leading-relaxed pl-8">
                           Athletes use our mobile app with AR technology to capture precise body measurements including height, wingspan, arm length, and standing reach. The system uses reference markers and spatial mapping to ensure ±0.5" accuracy.
@@ -2705,10 +3171,13 @@ export function RecruiterApp({ onBack }: RecruiterAppProps) {
                       </div>
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="bg-green-600 p-1.5 rounded">
+                          <div className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] p-1.5 rounded">
                             <Shield className="w-4 h-4 text-white" />
                           </div>
-                          <h5 className="text-sm text-purple-900">Verification Guarantee</h5>
+                          <h5 className="text-sm text-[#2196F3] flex items-center gap-1">
+                            Verification Guarantee
+                            <CheckCircle2 className="w-3 h-3 text-[#00BCD4]" />
+                          </h5>
                         </div>
                         <p className="text-xs text-gray-700 leading-relaxed pl-8">
                           All measurements tagged with the "AR Verified" badge have been captured using our proprietary technology and cross-referenced with video analysis. Coaches can trust these measurements are accurate within 1% margin of error.

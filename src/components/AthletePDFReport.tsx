@@ -51,7 +51,7 @@ export function AthletePDFReport({ athlete, onBack }: AthletePDFReportProps) {
               <p className="text-3xl">{athlete.yearOfGraduation}</p>
             </div>
             <div className="text-center p-4 bg-white/10 rounded-xl backdrop-blur">
-              <p className="text-gray-200 text-xs mb-2 tracking-wide">GPA</p>
+              <p className="text-gray-200 text-xs mb-2 tracking-wide">GPA (US Equivalent)</p>
               <p className="text-3xl">{athlete.gpa}</p>
             </div>
             <div className="text-center p-4 bg-white/10 rounded-xl backdrop-blur">
@@ -229,7 +229,7 @@ export function AthletePDFReport({ athlete, onBack }: AthletePDFReportProps) {
               <table className="w-full border-collapse">
                 <tbody>
                   <tr className="border-b border-gray-300">
-                    <td className="py-4 text-sm text-gray-600 tracking-wide w-1/3">Cumulative GPA</td>
+                    <td className="py-4 text-sm text-gray-600 tracking-wide w-1/3">Cumulative GPA (US Equivalent)</td>
                     <td className="py-4 text-[#2196F3]">{athlete.gpa}</td>
                   </tr>
                   <tr className="border-b border-gray-300 bg-gray-50">

@@ -23,7 +23,6 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
     sport: '',
     position: '',
     country: '',
-    gpa: '',
     highSchool: '',
     profilePicture: null as string | null,
     height: '',
@@ -33,8 +32,6 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
     jerseyNumber: '',
     dominantSide: '',
     gamesPlayed: '',
-    seasonStats: '',
-    achievements: '',
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -93,7 +90,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-[#2196F3]">Sign Up as Athlete</h3>
-                <Badge className="bg-green-500 text-white">100% Free</Badge>
+                <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white">$9.99/mo</Badge>
               </div>
               
               <div className="space-y-4">
@@ -243,17 +240,6 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
                 </div>
 
                 <div>
-                  <Label htmlFor="gpa">GPA</Label>
-                  <Input
-                    id="gpa"
-                    placeholder="3.8"
-                    value={formData.gpa}
-                    onChange={(e) => handleInputChange('gpa', e.target.value)}
-                    className="rounded-xl"
-                  />
-                </div>
-
-                <div>
                   <Label htmlFor="highSchool">High School</Label>
                   <Input
                     id="highSchool"
@@ -373,32 +359,6 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
                     onChange={(e) => handleInputChange('gamesPlayed', e.target.value)}
                     className="rounded-xl"
                   />
-                </div>
-
-                <div>
-                  <Label htmlFor="seasonStats">Season Stats</Label>
-                  <Textarea
-                    id="seasonStats"
-                    placeholder="e.g., 18 goals, 12 assists, 85% passing accuracy"
-                    value={formData.seasonStats}
-                    onChange={(e) => handleInputChange('seasonStats', e.target.value)}
-                    className="rounded-xl resize-none"
-                    rows={3}
-                  />
-                  <p className="text-xs text-gray-500 mt-1">Include your key statistics for this season</p>
-                </div>
-
-                <div>
-                  <Label htmlFor="achievements">Championships & Achievements</Label>
-                  <Textarea
-                    id="achievements"
-                    placeholder="e.g., State Championship 2024, MVP Award, All-Conference Team"
-                    value={formData.achievements}
-                    onChange={(e) => handleInputChange('achievements', e.target.value)}
-                    className="rounded-xl resize-none"
-                    rows={4}
-                  />
-                  <p className="text-xs text-gray-500 mt-1">List your major accomplishments and awards</p>
                 </div>
               </div>
             </div>

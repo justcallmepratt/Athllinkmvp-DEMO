@@ -65,7 +65,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
           <div className="max-w-4xl mx-auto">
             <div className="h-1 bg-gray-200">
               <div 
-                className="h-full bg-[#FF5722] transition-all duration-300"
+                className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3] transition-all duration-300"
                 style={{ width: step === 'account' ? '50%' : '100%' }}
               />
             </div>
@@ -78,7 +78,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
         {step === 'plan' && (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <Badge className="bg-[#FF5722] text-white mb-4 px-4 py-2 text-sm">
+              <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white mb-4 px-4 py-2 text-sm border-0">
                 🚀 Professional Recruiting Platform
               </Badge>
               <h1 className="text-[#2196F3] mb-2">Start Finding Top Athletes</h1>
@@ -88,7 +88,7 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
             {/* Main Plan Card */}
             <Card className="p-8 rounded-2xl border-2 border-[#2196F3] shadow-xl max-w-2xl mx-auto">
               <div className="text-center mb-6">
-                <Badge className="bg-gradient-to-r from-[#FF5722] to-[#F4511E] text-white mb-4 px-4 py-2">
+                <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white mb-4 px-4 py-2 border-0">
                   Most Popular
                 </Badge>
                 <h3 className="text-[#2196F3] mb-3">Monthly Recruiting Plan</h3>
@@ -480,6 +480,10 @@ export function RecruiterSignup({ onComplete, onBack }: RecruiterSignupProps) {
 
             <p className="text-center text-xs text-gray-500 mt-4">
               Your subscription will renew at ${totalPrice.toLocaleString()}/month. You can cancel anytime from your account settings.
+            </p>
+
+            <p className="text-center text-xs text-gray-400 mt-2">
+              * Customers are responsible for any additional fees (e.g., currency conversion, international transaction fees) that may be charged by their payment provider or financial institution.
             </p>
           </Card>
         )}
