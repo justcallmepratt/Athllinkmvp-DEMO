@@ -31,27 +31,55 @@ export default function App() {
   if (view === 'select') {
     return (
       <div className="min-h-screen bg-white">
-        {/* Header / Top Bar */}
-        <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        {/* Top Announcement Bar */}
+        <div className="bg-gradient-to-r from-[#2196F3] to-[#00BCD4] text-white py-2.5">
           <div className="max-w-[1600px] mx-auto px-4">
-            <div className="flex items-center justify-between h-20">
+            <div className="flex items-center justify-center gap-6 text-sm flex-wrap">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                <span>12,000+ Athletes</span>
+              </div>
+              <div className="hidden sm:flex items-center gap-2">
+                <School className="w-4 h-4" />
+                <span>500+ Partner Schools</span>
+              </div>
+              <div className="hidden md:flex items-center gap-2">
+                <Globe className="w-4 h-4" />
+                <span>87 Countries</span>
+              </div>
+              <div className="hidden lg:flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                <span>First 3 Months Free for Athletes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Header / Top Bar */}
+        <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+          <div className="max-w-[1600px] mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
               {/* Logo */}
               <div className="flex items-center gap-3">
-                <img src={athlinkLogo} className="w-12 h-12 object-contain" alt="Athlink Logo" />
+                <img src={athlinkLogo} className="w-10 h-10 object-contain" alt="Athlink Logo" />
+                <div className="hidden md:block">
+                  <h1 className="text-gray-900">Athlink</h1>
+                  <p className="text-xs text-gray-500">Global Athletic Recruiting</p>
+                </div>
               </div>
 
               {/* Navigation */}
-              <nav className="hidden md:flex items-center gap-8">
-                <a href="#how-it-works" className="text-gray-700 hover:text-[#2196F3] transition-colors">
+              <nav className="hidden md:flex items-center gap-6">
+                <a href="#how-it-works" className="text-sm text-gray-700 hover:text-[#2196F3] transition-colors">
                   How It Works
                 </a>
-                <a href="#features" className="text-gray-700 hover:text-[#2196F3] transition-colors">
+                <a href="#features" className="text-sm text-gray-700 hover:text-[#2196F3] transition-colors">
                   Features
                 </a>
-                <a href="#success-stories" className="text-gray-700 hover:text-[#2196F3] transition-colors">
-                  Success Stories
+                <a href="#pricing" className="text-sm text-gray-700 hover:text-[#2196F3] transition-colors">
+                  Pricing
                 </a>
-                <a href="#for-coaches" className="text-gray-700 hover:text-[#2196F3] transition-colors">
+                <a href="#for-coaches" className="text-sm text-gray-700 hover:text-[#2196F3] transition-colors">
                   For Coaches
                 </a>
               </nav>
@@ -61,13 +89,13 @@ export default function App() {
                 <Button
                   onClick={() => setView('recruiter-signup')}
                   variant="outline"
-                  className="hidden sm:flex h-11 px-6 border-[#2196F3] text-[#2196F3] hover:bg-[#2196F3] hover:text-white rounded-xl"
+                  className="hidden sm:flex h-10 px-5 border-[#2196F3] text-[#2196F3] hover:bg-[#2196F3] hover:text-white rounded-lg text-sm"
                 >
                   For Coaches
                 </Button>
                 <Button
                   onClick={() => setView('athlete-onboarding')}
-                  className="h-11 px-6 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
+                  className="h-10 px-5 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-lg text-sm"
                 >
                   Get Started Free
                 </Button>
@@ -77,7 +105,7 @@ export default function App() {
         </header>
 
         {/* Hero Section */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#006064] via-[#004D40] to-[#00251A]">
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#1A1A1A] via-[#0D47A1] to-[#01579B]" id="home">
           {/* Background Image - Football Field */}
           <div className="absolute inset-0">
             <img 
@@ -252,7 +280,7 @@ export default function App() {
                   </Button>
                 </Card>
 
-                <Card className="p-8 rounded-3xl bg-white/98 backdrop-blur-md shadow-2xl border-2 border-white/50 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
+                <Card className="p-8 rounded-3xl bg-white/98 backdrop-blur-md shadow-2xl border-2 border-white/50 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1" id="for-coaches">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-gradient-to-br from-[#2196F3] to-[#1976D2] p-4 rounded-2xl">
                       <School className="w-8 h-8 text-white" />
@@ -338,7 +366,7 @@ export default function App() {
         </div>
 
         {/* Sports Gallery Showcase */}
-        <div className="bg-white py-16">
+        <div className="bg-white py-16" id="features">
           <div className="max-w-[1600px] mx-auto px-4">
             <div className="text-center mb-12">
               <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0 px-4 py-2 mb-4">
@@ -479,8 +507,8 @@ export default function App() {
                 </ul>
               </Card>
 
-              <Card className="p-8 rounded-2xl bg-white/95 border-2 border-[#8BC34A]/30 hover:border-[#8BC34A] transition-all hover:shadow-xl">
-                <div className="bg-gradient-to-br from-[#8BC34A] to-[#7CB342] w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+              <Card className="p-8 rounded-2xl bg-white/95 border-2 border-[#00BCD4]/30 hover:border-[#00BCD4] transition-all hover:shadow-xl">
+                <div className="bg-gradient-to-br from-[#00BCD4] to-[#00ACC1] w-12 h-12 rounded-xl flex items-center justify-center mb-6">
                   <span className="text-white text-xl">2</span>
                 </div>
                 <h3 className="text-[#2196F3] mb-3">Get Matched</h3>
@@ -489,15 +517,15 @@ export default function App() {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center text-sm text-gray-700">
-                    <Check className="w-4 h-4 text-[#8BC34A] mr-2 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#00BCD4] mr-2 flex-shrink-0" />
                     Smart AI recommendations
                   </li>
                   <li className="flex items-center text-sm text-gray-700">
-                    <Check className="w-4 h-4 text-[#8BC34A] mr-2 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#00BCD4] mr-2 flex-shrink-0" />
                     Personalized fit scores
                   </li>
                   <li className="flex items-center text-sm text-gray-700">
-                    <Check className="w-4 h-4 text-[#8BC34A] mr-2 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#00BCD4] mr-2 flex-shrink-0" />
                     Real-time opportunities
                   </li>
                 </ul>
@@ -1305,7 +1333,7 @@ export default function App() {
         </div>
 
         {/* Pricing Section */}
-        <div className="bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] py-20">
+        <div className="bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] py-20" id="pricing">
           <div className="max-w-[1600px] mx-auto px-4">
             <div className="text-center mb-16">
               <Badge className="bg-[#00BCD4]/20 text-[#00BCD4] border-0 px-4 py-2 mb-4">

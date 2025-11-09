@@ -582,7 +582,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
       {/* Main Content */}
       <div className="flex-1 overflow-auto md:ml-64 pb-20 md:pb-0">
         {/* Pricing Banner */}
-        <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-2 px-4 sticky top-0 z-20">
+        <div className="bg-[#2196F3] text-white py-2 px-4 sticky top-0 z-20">
           <div className="max-w-[1600px] mx-auto text-center">
             <p className="text-xs">
               <Sparkles className="w-3 h-3 inline mr-1" />
@@ -641,123 +641,110 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
         {activeTab === 'home' && (
           <div className="p-4 space-y-6">
             {/* Welcome Card */}
-            <Card className="p-6 bg-gradient-to-br from-[#2196F3] to-[#1976D2] text-white rounded-2xl">
-              <div className="flex items-center mb-4">
+            <Card className="p-6 bg-white border border-gray-100 rounded-lg">
+              <div className="flex items-center mb-6">
                 <img 
                   src={profile.profilePicture || 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=100'} 
                   alt={profile.name}
-                  className="w-16 h-16 rounded-full object-cover mr-4"
+                  className="w-14 h-14 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h3 className="text-white">{profile.name}</h3>
-                  <p className="text-gray-100">{profile.sport} • {profile.position}</p>
+                  <h3 className="text-gray-900">{profile.name}</h3>
+                  <p className="text-gray-500 text-sm">{profile.sport} • {profile.position}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/20">
+              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                 <div>
-                  <p className="text-2xl text-white">{mockVideos.length}</p>
-                  <p className="text-sm text-gray-100">Videos</p>
+                  <p className="text-2xl text-gray-900">{mockVideos.length}</p>
+                  <p className="text-xs text-gray-500">Videos</p>
                 </div>
                 <div>
-                  <p className="text-2xl text-white">{mockMatches.length}</p>
-                  <p className="text-sm text-gray-100">Matches</p>
+                  <p className="text-2xl text-gray-900">{mockMatches.length}</p>
+                  <p className="text-xs text-gray-500">Matches</p>
                 </div>
                 <div>
-                  <p className="text-2xl text-white">{mockVideos.length}</p>
-                  <p className="text-sm text-gray-100">Videos</p>
+                  <p className="text-2xl text-gray-900">{profile.gpa || '3.8'}</p>
+                  <p className="text-xs text-gray-500">GPA</p>
                 </div>
               </div>
             </Card>
 
             {/* Quick Access */}
             <div>
-              <h3 className="text-[#2196F3] mb-4">Quick Access</h3>
+              <h3 className="text-gray-900 mb-4">Quick Access</h3>
               <div className="grid grid-cols-2 gap-3">
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200"
+                  className="p-5 rounded-lg hover:shadow-md transition-all cursor-pointer bg-white border border-gray-100 hover:border-[#2196F3]"
                   onClick={() => setActiveTab('scholarships')}
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-3">
-                      <Award className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#2196F3] rounded-lg flex items-center justify-center">
+                      <Award className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-[#2196F3] text-sm mb-1">Scholarships</p>
-                    <Badge className="bg-green-600 text-white text-xs">{mockScholarshipOffers.length} Offers</Badge>
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm">Scholarships</p>
+                      <p className="text-xs text-gray-500">{mockScholarshipOffers.length} Offers</p>
+                    </div>
                   </div>
                 </Card>
 
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200"
+                  className="p-5 rounded-lg hover:shadow-md transition-all cursor-pointer bg-white border border-gray-100 hover:border-[#2196F3]"
                   onClick={() => setActiveTab('training')}
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-3">
-                      <Dumbbell className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#00BCD4] rounded-lg flex items-center justify-center">
+                      <Dumbbell className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-[#2196F3] text-sm mb-1">Training</p>
-                    <Badge className="bg-blue-600 text-white text-xs">{mockTrainingPrograms.length} Programs</Badge>
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm">Training</p>
+                      <p className="text-xs text-gray-500">{mockTrainingPrograms.length} Programs</p>
+                    </div>
                   </div>
                 </Card>
 
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200"
+                  className="p-5 rounded-lg hover:shadow-md transition-all cursor-pointer bg-white border border-gray-100 hover:border-[#2196F3]"
                   onClick={() => setActiveTab('visits')}
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-3">
-                      <MapPin className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#2196F3] rounded-lg flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-[#2196F3] text-sm mb-1">Campus Visits</p>
-                    <Badge className="bg-purple-600 text-white text-xs">{mockCampusVisits.length} Scheduled</Badge>
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm">Campus Visits</p>
+                      <p className="text-xs text-gray-500">{mockCampusVisits.length} Scheduled</p>
+                    </div>
                   </div>
                 </Card>
 
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200"
+                  className="p-5 rounded-lg hover:shadow-md transition-all cursor-pointer bg-white border border-gray-100 hover:border-[#2196F3]"
                   onClick={() => setActiveTab('nil')}
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#00BCD4] to-[#2196F3] rounded-full flex items-center justify-center mb-3">
-                      <DollarSign className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#00BCD4] rounded-lg flex items-center justify-center">
+                      <DollarSign className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-[#2196F3] text-sm mb-1">NIL Deals</p>
-                    <Badge className="bg-orange-600 text-white text-xs">{mockNILOpportunities.length} Opportunities</Badge>
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm">NIL Deals</p>
+                      <p className="text-xs text-gray-500">{mockNILOpportunities.length} Opportunities</p>
+                    </div>
                   </div>
                 </Card>
 
                 <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 col-span-2"
+                  className="p-5 rounded-lg hover:shadow-md transition-all cursor-pointer bg-white border border-gray-100 hover:border-[#2196F3] col-span-2"
                   onClick={() => setActiveTab('academics')}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-[#2196F3]">Academic Progress</p>
-                        <p className="text-sm text-gray-600">Transcript on file</p>
-                      </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#2196F3] rounded-lg flex items-center justify-center">
+                      <GraduationCap className="w-5 h-5 text-white" />
                     </div>
-                    <Badge className="bg-green-600 text-white">{mockAcademicProgress.ncaaEligibility}</Badge>
-                  </div>
-                </Card>
-
-                <Card 
-                  className="p-4 rounded-2xl hover:shadow-lg transition-shadow cursor-pointer bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-200 col-span-2"
-                  onClick={() => setActiveTab('camps')}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-[#2196F3]">Summer Camps</p>
-                        <p className="text-sm text-gray-600">Coach Invitations</p>
-                      </div>
+                    <div className="flex-1">
+                      <p className="text-gray-900 text-sm">Academic Progress</p>
+                      <p className="text-xs text-gray-500">{mockAcademicProgress.ncaaEligibility} • Transcript on file</p>
                     </div>
-                    <Badge className="bg-red-600 text-white">{mockSummerCamps.length} Invites</Badge>
                   </div>
                 </Card>
               </div>
@@ -766,10 +753,10 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
             {/* My Highlights */}
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-[#2196F3]">My Highlights</h3>
+                <h3 className="text-gray-900">My Highlights</h3>
                 <Button 
                   onClick={() => setActiveTab('upload')}
-                  className="bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+                  className="bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-lg"
                   size="sm"
                 >
                   <Plus className="w-4 h-4 mr-1" />
@@ -778,7 +765,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
               </div>
               <div className="space-y-3">
                 {mockVideos.map(video => (
-                  <Card key={video.id} className="p-0 overflow-hidden rounded-2xl">
+                  <Card key={video.id} className="p-0 overflow-hidden rounded-lg border border-gray-100">
                     <div className="flex">
                       <div className="relative w-32 h-24 flex-shrink-0">
                         <img 
@@ -832,7 +819,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                           </div>
                           <Badge 
                             variant={match.interest === 'High' ? 'default' : 'secondary'}
-                            className={match.interest === 'High' ? 'bg-[#FF5722] text-white' : ''}
+                            className={match.interest === 'High' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700'}
                           >
                             {match.interest}
                           </Badge>
@@ -860,14 +847,14 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
           <div className="p-4">
             {uploadStep === 'select' && (
               <div className="space-y-4">
-                <Card className="p-8 rounded-2xl border-2 border-dashed border-[#FF5722] bg-[#FF5722]/5 text-center cursor-pointer hover:bg-[#FF5722]/10 transition-colors">
-                  <Upload className="w-16 h-16 mx-auto mb-4 text-[#FF5722]" />
-                  <h3 className="text-[#2196F3] mb-2">Upload Video</h3>
+                <Card className="p-8 rounded-lg border-2 border-dashed border-[#2196F3] bg-blue-50 text-center cursor-pointer hover:bg-blue-100 transition-colors">
+                  <Upload className="w-16 h-16 mx-auto mb-4 text-[#2196F3]" />
+                  <h3 className="text-gray-900 mb-2">Upload Video</h3>
                   <p className="text-gray-600 mb-4">Select a video from your device</p>
                   <p className="text-sm text-gray-500">Max 90 seconds • MP4, MOV</p>
                   <Button 
                     onClick={() => setUploadStep('details')}
-                    className="mt-4 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+                    className="mt-4 bg-[#2196F3] hover:bg-[#1976D2] text-white rounded-lg"
                   >
                     Choose File
                   </Button>
@@ -882,13 +869,13 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                   </div>
                 </div>
 
-                <Card className="p-8 rounded-2xl border-2 border-dashed border-gray-300 text-center cursor-pointer hover:border-[#FF5722] hover:bg-[#FF5722]/5 transition-colors">
+                <Card className="p-8 rounded-lg border-2 border-dashed border-gray-200 text-center cursor-pointer hover:border-[#2196F3] hover:bg-blue-50 transition-colors">
                   <Play className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-                  <h3 className="text-[#2196F3] mb-2">Record Video</h3>
+                  <h3 className="text-gray-900 mb-2">Record Video</h3>
                   <p className="text-gray-600 mb-4">Record directly from camera</p>
                   <Button 
                     variant="outline"
-                    className="mt-4 rounded-xl"
+                    className="mt-4 rounded-lg border-[#2196F3] text-[#2196F3] hover:bg-[#2196F3] hover:text-white"
                   >
                     Start Recording
                   </Button>
@@ -897,9 +884,9 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
             )}
 
             {uploadStep === 'details' && (
-              <Card className="p-6 rounded-2xl space-y-6">
+              <Card className="p-6 rounded-lg space-y-6 border border-gray-100">
                 <div>
-                  <h3 className="text-[#2196F3] mb-4">Video Details</h3>
+                  <h3 className="text-gray-900 mb-4">Video Details</h3>
                   
                   {/* Video Preview */}
                   <div className="relative w-full h-64 bg-gray-200 rounded-xl mb-6 overflow-hidden">
