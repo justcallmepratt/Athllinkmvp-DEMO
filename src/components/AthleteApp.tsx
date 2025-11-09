@@ -437,6 +437,11 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
+  // Scroll to top when changing tabs
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
   // DISABLED: Show ad popup when switching pages (but not on initial load)
   // useEffect(() => {
   //   if (isInitialLoad) {

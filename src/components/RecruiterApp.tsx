@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, Search, MessageCircle, User, ArrowLeft, Heart, X, Send, Filter, ChevronDown, Play, TrendingUp, Star, FileText, BarChart3, Zap, Activity, Shield, Eye, Scan, Sparkles, Video, Calendar, Clock, Link2, Copy, CheckCircle2, Handshake, Globe, DollarSign, Trophy, FileSignature, MapPin, Building2, Users, Award, Briefcase, Target, Tag, Linkedin, Share2, ExternalLink, Brain, Download, Mail, Phone, SlidersHorizontal, ArrowUpRight, TrendingDown, Percent, Package, Settings, Bell } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
@@ -774,6 +774,11 @@ const mockContracts = [
 export function RecruiterApp({ onBack }: RecruiterAppProps) {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'discover' | 'saved' | 'messages' | 'reports' | 'compare' | 'profile' | 'sponsors' | 'federations' | 'nil' | 'camps' | 'contracts'>('dashboard');
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  // Scroll to top when changing tabs
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
   const [selectedAthlete, setSelectedAthlete] = useState<any>(null);
   const [filterOpen, setFilterOpen] = useState(false);
   const [savedAthletes, setSavedAthletes] = useState<number[]>([1, 3, 8]); // IDs of saved athletes
