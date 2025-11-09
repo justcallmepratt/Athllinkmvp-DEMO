@@ -77,7 +77,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
         <div className="max-w-md mx-auto">
           <div className="h-1 bg-gray-200">
             <div 
-              className="h-full bg-[#FF5722] transition-all duration-300"
+              className="h-full bg-gradient-to-r from-[#00BCD4] to-[#2196F3] transition-all duration-300"
               style={{ width: `${(step / 3) * 100}%` }}
             />
           </div>
@@ -162,7 +162,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
             <div className="pt-2 space-y-3">
               <Button 
                 onClick={handleNext}
-                className="w-full h-12 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+                className="w-full h-12 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
               >
                 Continue
               </Button>
@@ -291,7 +291,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
 
                 <div>
                   <Label>Transcript (PDF)</Label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#FF5722] transition-colors cursor-pointer">
+                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#00BCD4] transition-colors cursor-pointer">
                     <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                     <p className="text-sm text-gray-600">Click to upload or drag and drop</p>
                     <p className="text-xs text-gray-500">PDF up to 10MB</p>
@@ -300,7 +300,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
 
                 <div>
                   <Label>Recommendation Letter (PDF)</Label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#FF5722] transition-colors cursor-pointer">
+                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-[#00BCD4] transition-colors cursor-pointer">
                     <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                     <p className="text-sm text-gray-600">Click to upload or drag and drop</p>
                     <p className="text-xs text-gray-500">PDF up to 10MB</p>
@@ -311,7 +311,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
 
             <Button 
               onClick={handleNext}
-              className="w-full h-12 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+              className="w-full h-12 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
             >
               Continue
             </Button>
@@ -365,7 +365,7 @@ export function AthleteOnboarding({ onComplete, onBack }: AthleteOnboardingProps
 
             <Button 
               onClick={handleNext}
-              className="w-full h-12 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+              className="w-full h-12 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
             >
               Complete Setup - Start Free!
             </Button>

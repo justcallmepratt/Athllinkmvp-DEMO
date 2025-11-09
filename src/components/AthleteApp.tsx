@@ -803,7 +803,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-[#2196F3]">Matched Colleges</h3>
-                <Badge className="bg-[#FF5722] text-white">{mockMatches.filter(m => m.interest === 'High').length} High Interest</Badge>
+                <Badge className="bg-[#2196F3] text-white">{mockMatches.filter(m => m.interest === 'High').length} High Interest</Badge>
               </div>
               <div className="space-y-3">
                 {mockMatches.map(match => (
@@ -934,7 +934,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                       setUploadStep('select');
                       setActiveTab('home');
                     }}
-                    className="flex-1 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+                    className="flex-1 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
                   >
                     Publish
                   </Button>
@@ -967,7 +967,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-gray-500">{msg.time}</span>
                         {msg.unread && (
-                          <div className="w-2 h-2 bg-[#FF5722] rounded-full"></div>
+                          <div className="w-2 h-2 bg-[#00BCD4] rounded-full"></div>
                         )}
                       </div>
                     </div>
@@ -1050,7 +1050,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
               </div>
 
               <Button 
-                className="w-full mt-6 bg-[#FF5722] hover:bg-[#F4511E] text-white rounded-xl"
+                className="w-full mt-6 bg-gradient-to-r from-[#00BCD4] to-[#2196F3] hover:from-[#00ACC1] hover:to-[#1976D2] text-white rounded-xl"
               >
                 <Edit className="w-4 h-4 mr-2" />
                 Edit Profile
@@ -1126,10 +1126,10 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-gray-700">Video Engagement</span>
-                    <span className="text-[#FF5722]">89%</span>
+                    <span className="text-[#00BCD4]">89%</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF5722]" style={{ width: '89%' }}></div>
+                    <div className="h-full bg-[#00BCD4]" style={{ width: '89%' }}></div>
                   </div>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
@@ -1138,7 +1138,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                     <span className="text-[#2196F3]">92%</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-[#2196F3] to-[#FF5722]" style={{ width: '92%' }}></div>
+                    <div className="h-full bg-gradient-to-r from-[#2196F3] to-[#00BCD4]" style={{ width: '92%' }}></div>
                   </div>
                 </div>
               </div>
@@ -1227,7 +1227,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                           </div>
                           <Badge 
                             variant={scholarship.status === 'Offer Extended' ? 'default' : 'secondary'}
-                            className={scholarship.status === 'Offer Extended' ? 'bg-[#FF5722] text-white' : ''}
+                            className={scholarship.status === 'Offer Extended' ? 'bg-[#2196F3] text-white' : ''}
                           >
                             {scholarship.status}
                           </Badge>
@@ -1272,7 +1272,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                           </div>
                           <Badge 
                             variant={program.progress >= 80 ? 'default' : 'secondary'}
-                            className={program.progress >= 80 ? 'bg-[#FF5722] text-white' : ''}
+                            className={program.progress >= 80 ? 'bg-[#2196F3] text-white' : ''}
                           >
                             {program.progress}% Complete
                           </Badge>
@@ -1317,7 +1317,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                           </div>
                           <Badge 
                             variant={visit.status === 'Confirmed' ? 'default' : 'secondary'}
-                            className={visit.status === 'Confirmed' ? 'bg-[#FF5722] text-white' : ''}
+                            className={visit.status === 'Confirmed' ? 'bg-[#2196F3] text-white' : ''}
                           >
                             {visit.status}
                           </Badge>
@@ -1362,7 +1362,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                           </div>
                           <Badge 
                             variant={opportunity.status === 'Opportunity Available' ? 'default' : 'secondary'}
-                            className={opportunity.status === 'Opportunity Available' ? 'bg-[#FF5722] text-white' : ''}
+                            className={opportunity.status === 'Opportunity Available' ? 'bg-[#2196F3] text-white' : ''}
                           >
                             {opportunity.status}
                           </Badge>
@@ -1401,10 +1401,10 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-gray-700">Class Rank</span>
-                    <span className="text-[#FF5722]">{mockAcademicProgress.classRank}</span>
+                    <span className="text-[#00BCD4]">{mockAcademicProgress.classRank}</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF5722]" style={{ width: '89%' }}></div>
+                    <div className="h-full bg-[#00BCD4]" style={{ width: '89%' }}></div>
                   </div>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
@@ -1413,16 +1413,16 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                     <span className="text-[#2196F3]">{mockAcademicProgress.satScore}</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-[#2196F3] to-[#FF5722]" style={{ width: '92%' }}></div>
+                    <div className="h-full bg-gradient-to-r from-[#2196F3] to-[#00BCD4]" style={{ width: '92%' }}></div>
                   </div>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-gray-700">ACT Score</span>
-                    <span className="text-[#FF5722]">{mockAcademicProgress.actScore}</span>
+                    <span className="text-[#00BCD4]">{mockAcademicProgress.actScore}</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF5722]" style={{ width: '89%' }}></div>
+                    <div className="h-full bg-[#00BCD4]" style={{ width: '89%' }}></div>
                   </div>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
@@ -1437,10 +1437,10 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                 <div className="p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-gray-700">Courses</span>
-                    <span className="text-[#FF5722]">{mockAcademicProgress.courses.length}</span>
+                    <span className="text-[#00BCD4]">{mockAcademicProgress.courses.length}</span>
                   </div>
                   <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FF5722]" style={{ width: '89%' }}></div>
+                    <div className="h-full bg-[#00BCD4]" style={{ width: '89%' }}></div>
                   </div>
                 </div>
               </div>
@@ -1512,19 +1512,19 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                   <p className="text-sm text-gray-700 mb-3">Local businesses want to support talented athletes in their community while gaining social media exposure.</p>
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">•</span>
+                      <span className="text-[#00BCD4]">•</span>
                       <span>Browse available opportunities from businesses near you</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">•</span>
+                      <span className="text-[#00BCD4]">•</span>
                       <span>Apply if you meet the follower requirements</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">•</span>
+                      <span className="text-[#00BCD4]">•</span>
                       <span>Complete simple tasks like social posts or appearances</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">•</span>
+                      <span className="text-[#00BCD4]">•</span>
                       <span>Earn money, free products, or services</span>
                     </li>
                   </ul>
@@ -1592,23 +1592,23 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
                   <h4 className="text-[#2196F3] mb-2">Pro Tips for Recruiting Videos</h4>
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">✓</span>
+                      <span className="text-[#00BCD4]">✓</span>
                       <span>Keep videos under 90 seconds for best engagement</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">✓</span>
+                      <span className="text-[#00BCD4]">✓</span>
                       <span>Use good lighting - natural light or ring lights work great</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">✓</span>
+                      <span className="text-[#00BCD4]">✓</span>
                       <span>Showcase your best plays first to hook coaches immediately</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">✓</span>
+                      <span className="text-[#00BCD4]">✓</span>
                       <span>Include game footage, not just practice clips</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#FF5722]">✓</span>
+                      <span className="text-[#00BCD4]">✓</span>
                       <span>Add text overlays with your stats and achievements</span>
                     </li>
                   </ul>
@@ -1675,7 +1675,7 @@ export function AthleteApp({ profile, onBack }: AthleteAppProps) {
 
                 <div className="flex gap-3">
                   <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 bg-[#FF5722] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                    <div className="w-10 h-10 bg-[#2196F3] rounded-full flex items-center justify-center text-white flex-shrink-0">
                       2
                     </div>
                     <div className="w-0.5 h-full bg-gray-300 mt-2"></div>

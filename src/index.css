@@ -3334,12 +3334,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:border-\[\#FF5722\]:hover {
-      border-color: #ff5722;
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:border-blue-200:hover {
       border-color: var(--color-blue-200);
     }
