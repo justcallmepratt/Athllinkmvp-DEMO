@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AthleteOnboarding } from './components/AthleteOnboarding';
 import { AthleteApp } from './components/AthleteApp';
 import { AthletePayment } from './components/AthletePayment';
@@ -14,6 +14,11 @@ import athlinkLogo from 'figma:asset/2dea44558ee75ccc34db0ab7f1dff6684b053f54.pn
 export default function App() {
   const [view, setView] = useState<'select' | 'athlete-onboarding' | 'athlete-payment' | 'athlete-app' | 'recruiter-signup' | 'recruiter-app'>('select');
   const [athleteProfile, setAthleteProfile] = useState<any>(null);
+
+  // Each view starts at the top, not where the previous one was scrolled to.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
 
   const handleAthleteOnboardingComplete = (profile: any) => {
     setAthleteProfile(profile);
@@ -280,7 +285,7 @@ export default function App() {
                   </Button>
                 </Card>
 
-                <Card className="p-8 rounded-3xl bg-white/98 backdrop-blur-md shadow-2xl border-2 border-white/50 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1" id="for-coaches">
+                <Card className="p-8 rounded-3xl bg-white/98 backdrop-blur-md shadow-2xl border-2 border-white/50 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1" id="for-coaches-card">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-gradient-to-br from-[#2196F3] to-[#1976D2] p-4 rounded-2xl">
                       <School className="w-8 h-8 text-white" />
@@ -744,7 +749,7 @@ export default function App() {
         </div>
 
         {/* AI/AR Technology Section */}
-        <div className="bg-white py-20" id="features">
+        <div className="bg-white py-20" id="verified-measurements">
           <div className="max-w-[1600px] mx-auto px-4">
             <div className="text-center mb-16">
               <Badge className="bg-gradient-to-r from-[#00BCD4] to-[#2196F3] text-white border-0 px-4 py-2 mb-4">

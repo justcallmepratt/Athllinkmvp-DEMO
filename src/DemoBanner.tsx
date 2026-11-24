@@ -1,4 +1,4 @@
-// Shown on every screen of the demo on justcallmepratt.dev. The app is a
+// Shown at the top of every screen of the demo on justcallmepratt.dev. The app is a
 // prototype: its numbers, athletes, schools and payment screens are sample
 // data, and nothing typed into it is sent anywhere. Inline styles, because the
 // app's CSS is a precompiled Tailwind build and may not contain new classes.
@@ -8,11 +8,6 @@ export function DemoBanner() {
       role="note"
       aria-label="About this demo"
       style={{
-        position: 'fixed',
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 1000,
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
